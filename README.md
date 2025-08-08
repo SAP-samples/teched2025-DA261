@@ -1,12 +1,12 @@
-# Session ID - Session Title
+# DA261 -  Unlocking AI-driven insights from your business data in SAP HANA Cloud
 
 ## Description
 
-This repository contains the material for the SAP TechEd 2025 session called Session ID - Session Title.  
+This repository contains the material for the SAP TechEd 2025 Hands-on Workshop __Unlocking AI-driven insights from your business data in SAP HANA Cloud__ (Session-ID DA261).
 
 ## Overview
 
-This session introduces attendees to...
+In this workshop you will learn how to utilize SAP HANA Cloud's AI capabilities for custom AI applications on SAP Business Technology Platform. Find out about tabular AI use cases served from the database, similarity search with the SAP HANA Cloud vector engine and the text embedding model, and retrieval augmented generation (RAG) using the new SAP HANA Cloud knowledge graph engine.
 
 ## Requirements
 
