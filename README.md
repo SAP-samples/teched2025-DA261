@@ -11,6 +11,7 @@ In this workshop you will learn how to utilize SAP HANA Cloud's AI capabilities 
 ## Requirements
 
 The requirements to follow the exercises in this repository are...
+- [Configure your working environment](./SETUP_DA261.md)
 
 ## Exercises
 
