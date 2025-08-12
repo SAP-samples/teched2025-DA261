@@ -10,29 +10,30 @@ In this workshop you will learn how to utilize SAP HANA Cloud's AI capabilities 
 
 ## Requirements
 
-The requirements to follow the exercises in this repository are...
-- [Configure your working environment](./SETUP_DA261.md)
+The technical requirements to complete the exercises in this repository, including hardware and software specifications are taken care of by the provided systems used for the in-person Hands-on Workshop. Required _configuration tasks_ are outlined in the [Getting Started](exercises/ex0/) section.
+
+Setup requirement instructions for pursuing this Hands-on Workshop in your local or trial / free-tier environment are documented in the [setup prerequisites](zappendix/setup_prerequisites.md)
 
 ## Exercises
 
-Provide the exercise content here directly in README.md using [markdown](https://guides.github.com/features/mastering-markdown/) and linking to the specific exercise pages, below is an example.
+Here is overview of the exercises to be completed during this Hands-on Workshop, additional add-on exercises are optional and marked respectively.
+The [Getting Started](exercises/ex0/) should pursued first, the other main exercises can be pursued in order of personal interest.
 
 - [Getting Started](exercises/ex0/)
-- [Exercise 1 - First Exercise Description](exercises/ex1/)
+- [Exercise 1 - Outlier Detection on ACDOCA](exercises/ex1/)
     - [Exercise 1.1 - Exercise 1 Sub Exercise 1 Description](exercises/ex1#exercise-11-sub-exercise-1-description)
     - [Exercise 1.2 - Exercise 1 Sub Exercise 2 Description](exercises/ex1#exercise-12-sub-exercise-2-description)
-- [Exercise 2 - Second Exercise Description](exercises/ex2/)
+- [Exercise 2 - Service Ticket Classification using Vectors and Machine Learning](exercises/ex2/)
     - [Exercise 2.1 - Exercise 2 Sub Exercise 1 Description](exercises/ex2#exercise-21-sub-exercise-1-description)
     - [Exercise 2.2 - Exercise 2 Sub Exercise 2 Description](exercises/ex2#exercise-22-sub-exercise-2-description)
+- [Exercise 3 - Service Ticket Knowledge Graph Search using SPARQL](exercises/ex3/)
+    - [Exercise 3.1 - Exercise 3 Sub Exercise 1 Description](exercises/ex3#exercise-31-sub-exercise-1-description)
+    - [Exercise 3.2 - Exercise 3 Sub Exercise 2 Description](exercises/ex3#exercise-32-sub-exercise-2-description)
 
-  
-**OR** Link to the Tutorial Navigator for example...
-
-Start the exercises [here](https://developers.sap.com/tutorials/abap-environment-trial-onboarding.html).
-
-**IMPORTANT**
-
-Your repo must contain the .reuse and LICENSES folder and the License section below. DO NOT REMOVE the section or folders/files. Also, remove all unused template assets(images, folders, etc) from the exercises folder. 
+<br><br>
+- [Exercise 9 - template exercise chapter](exercises/ex9/)
+    - [Exercise 9.1 - Exercise 9 Sub Exercise 1 Description](exercises/ex9#exercise-91-sub-exercise-1-description)
+    - [Exercise 9.2 - Exercise 9 Sub Exercise 2 Description](exercises/ex9#exercise-92-sub-exercise-2-description)
 
 ## Contributing
 Please read the [CONTRIBUTING.md](./CONTRIBUTING.md) to understand the contribution guidelines.
