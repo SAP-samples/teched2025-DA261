@@ -106,7 +106,8 @@ The following steps are to setup the required notebook.
 <br>![](./images/BAS_clone_from_github.png)
 
 2. A prompt will appear on top asking for a URL to the repository. Copy and paste in the following URL and then press Enter.
-> https://github.com/SAP-samples/sap-genai-hub-with-sap-hana-cloud-vector-engine.git>
+> https://github.com/SAP-samples/teched2025-DA261.git
+
 <br>![](./images/BAS_clone_path.png)
 
 3 The following message will appear. Select Open to see the imported files in the Explorer window.
@@ -118,20 +119,15 @@ The following steps are to setup the required notebook.
 <br><br>
 
 ### 2.3 Configure the python runtime
-- Select the Jupyter Notebook genAI_vectordb.ipynb to open it.
-<br>![](./images/BAS_cloned_repo_ready.png)
+- Select the Jupyter Notebook __ex0_1_python_setup.ipynb__ to open it.
+<br>![](./images/BAS_python_setup_jnb.png)  
+
+<br><br>
+
 > Note: If the following message appears, select Save as plain text on the dev space for future use.
 <br>![](./images/BAS_jnb_save_plaintxt.png)
 
-5. Open a new terminal in BAS by following the numbered sequence of steps.
-<br>![](./images/BAS_new_terminal.png)
 
-6. Change to the bin folder where ... is located.
-
-To change folder use the following shell command as seen below:
-
-> cd bin
-<br>![](./images/BAS_terminal_bin.png)
 
 <br><br>
 
@@ -150,8 +146,8 @@ To change folder use the following shell command as seen below:
 3 When the first cell is executed, a prompt asking to choose a kernel source will appear. Select Python Environments.
    <br>![](./images/BAS_python_select_env.png)
 
-4 On the next screen, select the recommended Python kernel (3.11.2).
-   <br>![](./images/BAS_python_select_env_3112.png)
+4 On the next screen, select the recommended Python kernel (3.13.1).
+   <br>![](./images/BAS_python_select_env_3131.png)
 
 5. The required libraries will now start installing, and some messages about port numbers will also be visible in the lower right corner. This could take a few minutes to complete also.
    <br>![](./images/BAS_python_install_env_log.png)
@@ -164,11 +160,28 @@ To change folder use the following shell command as seen below:
 
 > Note: It will take a few seconds for the kernel to restart and once done, the environment is ready for use!
 
-8 Please follow the instructions in the Jupyter Notebook in BAS to continue with the rest of the lesson.
+### Prepare the HANA Cloud database connection properties
+Create a copy of the [./ex0/temp_user.ini](ex0/temp_user.ini) file and rename it to [./ex0/user.ini](ex0/user.ini) 
+<br>![](./images/BAS_python_copy_tmpuserini.png)
+<br>![](./images/BAS_python_paste_tmpuserini.png)
+<br>![](./images/BAS_python_rename_tmpuserini.png)
+<br>![](./images/BAS_python_rename_userini.png)
+
+<br><br>
+and 
+2. the user and the password given to you by the instructor are updated in `user.ini` file 
+<br>![](./images/BAS_python_edit_userini.png)
+
+then execute the next cells to test the connection
+<br>![](./images/BAS_python_check-connection_userini.png)
+
+
+In addition, with the following cells the connection with prompted connection infos can also be tested <br>
+ Please follow the instructions in the Jupyter Notebook in BAS to continue with the rest of the lesson.
 
 > Note: For the section on connecting to the SAP HANA Cloud instance with the vector engine, please use the following as the HANA hostname:
-13b7c15d-848f-40b5-9259-c9c36ab85f56.hna1.prod-eu10.hanacloud.ondemand.com
-  <br>![](./images/BAS_python_connect_HC.png)
+__13b7c15d-848f-40b5-9259-c9c36ab85f56.hna1.prod-eu10.hanacloud.ondemand.com__
+  <br> <br>![](./images/BAS_python_connect_HC.png)
 
 
 <br><br><br>

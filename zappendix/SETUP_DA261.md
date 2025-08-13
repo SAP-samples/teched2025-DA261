@@ -8,9 +8,18 @@ The data
 
 <br><br>
 
+# ex0 old stuff
+5. Open a new terminal in BAS by following the numbered sequence of steps.
+<br>![](../exercises/ex0/images/BAS_new_terminal.png)
 
+6. Change to the bin folder where ... is located.
 
+To change folder use the following shell command as seen below:
 
+> cd bin
+<br>![](../exercises/ex0/images/BAS_terminal_bin.png)
+
+The `langchain_community.vectorstores.hanavector` library, specifically the `HanaDB` class, from the LangChain community, is designed to interact with vector data stored in SAP HANA Cloud database, and enables developers to utilize SAP HANA Cloud's advanced capabilities for managing and querying vector data, in the context of AI and machine learning applications.
 
 # Next unit
 ## SAP Business Technology Platform - Generative AI Hub with Vector grounding
