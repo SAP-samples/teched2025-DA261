@@ -78,11 +78,11 @@ WHERE {
   BIND(?ID_STR AS ?ComplaintID) .
 }
 ','',?,?);
-(```)
+```
 
 ### What did we just do?
 
-The above command transformed rows in the **CONSUMER_COMPLAINTS** table into a **Knowledge Graph**.
+The above command transformed rows in the **CONSUMER_COMPLAINTS** table into a **Knowledge Graph** - **'consumerComplaintsBase'**.
 
 * **Complaint** – each complaint row becomes a node (`cc:Complaint`) with its ID and narrative.
 * **Company** – linked to the complaint via `cc:handledBy`.
