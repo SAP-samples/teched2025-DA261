@@ -26,7 +26,7 @@ The [Getting Started](exercises/ex0/) should pursued first, the other main exerc
 - [Exercise 2 - Service Ticket Classification using Vectors and Machine Learning](exercises/ex2/)
     - [Exercise 2.1 - Exercise 2 Sub Exercise 1 Description](exercises/ex2#exercise-21-sub-exercise-1-description)
     - [Exercise 2.2 - Exercise 2 Sub Exercise 2 Description](exercises/ex2#exercise-22-sub-exercise-2-description)
-- [Exercise 3 - Service Ticket Knowledge Graph Search using SPARQL](exercises/ex3/)
+- [Exercise 3 - Consumer Complaints Knowledge Graph Search using SPARQL](exercises/ex3/)
     - [Exercise 3.1 - Exercise 3 Sub Exercise 1 Description](exercises/ex3#exercise-31-sub-exercise-1-description)
     - [Exercise 3.2 - Exercise 3 Sub Exercise 2 Description](exercises/ex3#exercise-32-sub-exercise-2-description)
 
