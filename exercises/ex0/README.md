@@ -175,20 +175,15 @@ and
 then execute the next cells to test the connection
 <br>![](./images/BAS_python_check-connection_userini.png)
 
-
-In addition, with the following cells the connection with prompted connection infos can also be tested <br>
- Please follow the instructions in the Jupyter Notebook in BAS to continue with the rest of the lesson.
-
-> Note: For the section on connecting to the SAP HANA Cloud instance with the vector engine, please use the following as the HANA hostname:
+You should have successfully connect to the SAP HANA Cloud instance with hostname:
 __13b7c15d-848f-40b5-9259-c9c36ab85f56.hna1.prod-eu10.hanacloud.ondemand.com__
-  <br> <br>![](./images/BAS_python_connect_HC.png)
-
 
 <br><br><br>
 
-## 3 Test the Python connection
+### Using the connection setup in the exercises
+> Note: the notebook file __ex0_2-check_setup.ipynb__ will be used throughout exercise 1 and 2, no change to the file is required.
+
 
 ## Summary
-
-Now that you have ... 
-Continue to - [Exercise 1 - Exercise 1 Description](../ex1/README.md)
+Now that you have successfully prepared your Python environment in SAP Business Application Studio and have connected successfully to the SAP HANA Cloud instance,  
+> continue to - [Exercise 1 - Exercise 1 Description](../ex1/README.md)
