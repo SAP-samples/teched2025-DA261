@@ -88,13 +88,18 @@ This exercise uses the Jupyter Notebooks extension in SAP Business Application S
 
 3. In the landing page for BAS, click on Create Dev Space to create a virtual environment in which to start a project.
 
-4. For the Dev Space name, use AC207556U10_VectorDB and select SAP HANA Native Application as the application type. On the right hand side, under the list of Additional SAP Extensions, choose Python Tools and then select Create Dev Space to start the process. This will create a dedicated development environment with all the tools required to run the notebook.
+4. Choose the following for creating your dev space, 
+      - __Dev space name__:  __DA261_AC207556U##__ 
+        [replace ## with index of your assgined user id] 
+      - select for __application type__ on the left __SAP HANA Native Application__ as the . 
+      - select from __Additional SAP Extensions__ on the right hand side the __Python Tools__
+      - and then select __Create Dev Space__ to start the process. This will create a dedicated development environment with all the tools required to run the Python Jupyter Notebooks.
 <br>![](./images/BAS_create_dev_space.png)
 
 1. It will take a few minutes for the Dev Space to start up. The status can be seen beside the name.
 <br>![](./images/BAS_devspace_start.png)
 
-1. Once the status changes to Running, select the name (AC207556U10_VectorDB) to open it.
+1. Once the status changes to Running, select the name (__DA261_AC207556U##__) to open it.
 <br>![](./images/BAS_devspace_running_open.png)
 
 <br><br>
@@ -123,11 +128,6 @@ The following steps are to setup the required notebook.
 <br>![](./images/BAS_python_setup_jnb.png)  
 
 <br><br>
-
-> Note: If the following message appears, select Save as plain text on the dev space for future use.
-<br>![](./images/BAS_jnb_save_plaintxt.png)
-
-
 
 <br><br>
 
