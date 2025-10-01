@@ -19,6 +19,9 @@ After completing these steps you will have created a Knowledge Graph from the Co
 
 
 2. Run the following SQL query to create triples from your consumer complaints table:
+   - adjust the Graph instance name __<consumerComplaintsBase_U##>__ to match the index of your assgined user id  
+   [replace ## with index of your assgined user id]
+        
 ```sql
 CALL SPARQL_EXECUTE('
 PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -26,7 +29,7 @@ PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>
 PREFIX cc:<http://consumer.demo.com/complaints#>
 
 INSERT {
-  GRAPH <consumerComplaintsBase> {
+  GRAPH <consumerComplaintsBase_U##> {
     # Complaint
     ?ComplaintURI rdf:type cc:Complaint .
     ?ComplaintURI rdfs:label ?ComplaintID .
@@ -68,7 +71,7 @@ INSERT {
   }
 }
 WHERE {
-  { sql_table(''SELECT TO_NVARCHAR("ComplaintID") AS ID_STR, "Company" AS "Company", CAST("ComplaintNarrative" AS NVARCHAR(5000)) AS "Narrative", CAST("Product" AS NVARCHAR(500)) AS "ProductName", CAST("SubProduct" AS NVARCHAR(500)) AS "SubProductName", CAST("Issue" AS NVARCHAR(500)) AS "IssueName", CAST("SubIssue" AS NVARCHAR(500)) AS "SubIssueName", CAST("CompanyResponse" AS NVARCHAR(1000)) AS "CompanyResponse", "State" AS "State", "ZipCode" AS "Zip", "Tags" AS "Tags", "ConsumerConsent" AS "Consent" FROM "DBADMIN"."CONSUMER_COMPLAINTS"'') }
+  { sql_table(''SELECT TO_NVARCHAR("ComplaintID") AS ID_STR, "Company" AS "Company", CAST("ComplaintNarrative" AS NVARCHAR(5000)) AS "Narrative", CAST("Product" AS NVARCHAR(500)) AS "ProductName", CAST("SubProduct" AS NVARCHAR(500)) AS "SubProductName", CAST("Issue" AS NVARCHAR(500)) AS "IssueName", CAST("SubIssue" AS NVARCHAR(500)) AS "SubIssueName", CAST("CompanyResponse" AS NVARCHAR(1000)) AS "CompanyResponse", "State" AS "State", "ZipCode" AS "Zip", "Tags" AS "Tags", "ConsumerConsent" AS "Consent" FROM "DA261_SHARE"."CONSUMER_COMPLAINTS"'') }
   BIND(URI(CONCAT("http://consumer.demo.com/complaint/",ENCODE_FOR_URI(?ID_STR))) AS ?ComplaintURI) .
   BIND(URI(CONCAT("http://consumer.demo.com/company/",ENCODE_FOR_URI(?Company))) AS ?CompanyURI) .
   BIND(URI(CONCAT("http://consumer.demo.com/product/",ENCODE_FOR_URI(?ProductName))) AS ?ProductURI) .
@@ -124,6 +127,7 @@ We will use `SPARQL_TABLE` to query the graph directly from SQL.
 1. **Check contents of the Knowledge Graph**
 
    Run the following query to fetch a few complaints with their associated company, product, issue, and outcome:
+   - note, adjust the Graph instance reference in the query __<consumerComplaintsBase_U##>__ to match the index of your assgined user id before execution
 
    ```sql
    SELECT *
@@ -133,7 +137,7 @@ We will use `SPARQL_TABLE` to query the graph directly from SQL.
    PREFIX cc:<http://consumer.demo.com/complaints#>
 
    SELECT ?ComplaintID ?Company ?Product ?Issue ?Outcome
-   FROM <consumerComplaintsBase>
+   FROM <consumerComplaintsBase_U##>
    WHERE {
      ?ComplaintURI rdf:type cc:Complaint .
      ?ComplaintURI rdfs:label ?ComplaintID .
@@ -151,9 +155,10 @@ We will use `SPARQL_TABLE` to query the graph directly from SQL.
    ```
   This will return a tabular view of sample complaints and their linked entities.
 
-2. **Filter complaints with a specific outcome**
+1. **Filter complaints with a specific outcome**
 
    For example, to see all complaints that were Closed with monetary relief, run:
+      - note, adjust the Graph instance reference in the query __<consumerComplaintsBase_U##>__ to match the index of your assgined user id before execution
 
    ```sql
    SELECT *
@@ -163,7 +168,7 @@ We will use `SPARQL_TABLE` to query the graph directly from SQL.
    PREFIX cc:<http://consumer.demo.com/complaints#>
 
    SELECT ?ComplaintID ?Company ?Product ?Issue ?Outcome
-   FROM <consumerComplaintsBase>
+   FROM <consumerComplaintsBase_U##>
    WHERE {
      ?ComplaintURI rdf:type cc:Complaint .
      ?ComplaintURI rdfs:label ?ComplaintID .
@@ -225,6 +230,7 @@ In short, property graphs and SQL hierarchies work, but Knowledge Graphs provide
 ### Now let's start with creating Product Hierarchy knowledge graph
 
 The following code inserts hierarchy triples mapping each product to a broader product category.
+- note, adjust the Hierachy name in the query __<consumerComplaintsProductHierarchy_U##>__ to match the index of your assgined user id before execution
 
 ```sql
 /* Insert product hierarchy triples, with
@@ -242,12 +248,12 @@ PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>
 PREFIX cc:<http://consumer.demo.com/complaints#>
 
 INSERT {
-  GRAPH <consumerComplaintsProductHierarchy> {
+  GRAPH <consumerComplaintsProductHierarchy_U##> {
     ?ProductURI rdfs:subClassOf ?CategoryURI .
   }
 }
 WHERE {
-  { sql_table(''SELECT DISTINCT CAST("Product" AS NVARCHAR(500)) AS "ProductName" FROM "DBADMIN"."CONSUMER_COMPLAINTS"'') }
+  { sql_table(''SELECT DISTINCT CAST("Product" AS NVARCHAR(500)) AS "ProductName" FROM "DA261_SHARE"."CONSUMER_COMPLAINTS"'') }
   BIND(URI(CONCAT("http://consumer.demo.com/product/",ENCODE_FOR_URI(?ProductName))) AS ?ProductURI) .
 
   BIND(
@@ -268,6 +274,7 @@ WHERE {
 ### Now next, let's create Issue Hierarchy knowledge graph
 
 The following code inserts hierarchy triples mapping each issue to a broader issue category.
+- note, adjust the Hierachy name in the query __<consumerComplaintsProductHierarchy_U##>__ to match the index of your assgined user id before execution
 
 ```sql
 CALL SPARQL_EXECUTE('
@@ -275,12 +282,12 @@ PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>
 PREFIX cc:<http://consumer.demo.com/complaints#>
 
 INSERT {
-  GRAPH <consumerComplaintsIssueHierarchy> {
+  GRAPH <consumerComplaintsIssueHierarchy_U##> {
     ?IssueURI rdfs:subClassOf ?CategoryURI .
   }
 }
 WHERE {
-  { sql_table(''SELECT DISTINCT CAST("Issue" AS NVARCHAR(500)) AS "IssueName" FROM "DBADMIN"."CONSUMER_COMPLAINTS"'') }
+  { sql_table(''SELECT DISTINCT CAST("Issue" AS NVARCHAR(500)) AS "IssueName" FROM "DA261_SHARE"."CONSUMER_COMPLAINTS"'') }
   BIND(URI(CONCAT("http://consumer.demo.com/issue/",ENCODE_FOR_URI(?IssueName))) AS ?IssueURI) .
 
   BIND(
@@ -324,7 +331,8 @@ With the Product and Issue hierarchies in place, we can now run more powerful SP
 This is where the Knowledge Graph approach clearly outshines flat SQL.
 
 1. **Complaints mentioning “credit card” - grouped by Product Category**
-
+- note, adjust the Grpah instance name __<consumerComplaintsBase_U##>__ and Hierachy name __<consumerComplaintsProductHierarchy_U##>__ in the query  to match the index of your assgined user id before execution
+- 
    ```sql
    SELECT * FROM SPARQL_TABLE('
    PREFIX cc:<http://consumer.demo.com/complaints#>
@@ -333,13 +341,13 @@ This is where the Knowledge Graph approach clearly outshines flat SQL.
 
    SELECT ?ProductCategory (COUNT(?Complaint) AS ?Count)
    WHERE {
-     GRAPH <consumerComplaintsBase> {
+     GRAPH <consumerComplaintsBase_U##> {
        ?Complaint rdf:type cc:Complaint .
        ?Complaint cc:complaintNarrative ?Narrative .
        FILTER(CONTAINS(LCASE(?Narrative),"credit card")) .
        ?Complaint cc:isRelatedTo ?ProductURI .
      }
-     GRAPH <consumerComplaintsProductHierarchy> {
+     GRAPH <consumerComplaintsProductHierarchy_U##> {
        ?ProductURI rdfs:subClassOf* ?ProductCategory .
      }
    }
@@ -352,7 +360,7 @@ This is where the Knowledge Graph approach clearly outshines flat SQL.
 2. **Credit card complaints - by ProductCategory × IssueCategory × Company × Outcome × State**
   
    This query shows how multiple hierarchies and attributes can be combined in one SPARQL query.
-
+- note, adjust the Grpah instance name __<consumerComplaintsBase_U##>__ and Hierachy name __<consumerComplaintsProductHierarchy_U##>__ in the query  to match the index of your assgined user id before execution
    ```sql
    SELECT * FROM SPARQL_TABLE('
    PREFIX cc:<http://consumer.demo.com/complaints#>
@@ -361,7 +369,7 @@ This is where the Knowledge Graph approach clearly outshines flat SQL.
 
    SELECT ?ProductCategory ?IssueCategory ?Company ?Outcome ?State (COUNT(?Complaint) AS ?Count)
    WHERE {
-   GRAPH <consumerComplaintsBase> {
+   GRAPH <consumerComplaintsBase_U##> {
     ?Complaint rdf:type cc:Complaint .
     ?Complaint cc:complaintNarrative ?Narrative .
     FILTER(CONTAINS(LCASE(?Narrative),"credit card")) .
@@ -377,10 +385,10 @@ This is where the Knowledge Graph approach clearly outshines flat SQL.
     ?ConsumerURI cc:locationState ?State .
    }
 
-   GRAPH <consumerComplaintsProductHierarchy> {
+   GRAPH <consumerComplaintsProductHierarchy_U##> {
     ?ProductURI rdfs:subClassOf* ?ProductCategory .
    }
-   GRAPH <consumerComplaintsIssueHierarchy> {
+   GRAPH <consumerComplaintsIssueHierarchy_U##> {
     ?IssueURI rdfs:subClassOf* ?IssueCategory .
    }
    }
@@ -399,13 +407,13 @@ This is where the Knowledge Graph approach clearly outshines flat SQL.
 
    SELECT ?State ?IssueCategory (COUNT(?Complaint) AS ?Count)
    WHERE {
-   GRAPH <consumerComplaintsBase> {
+   GRAPH <consumerComplaintsBase_U##> {
     ?Complaint rdf:type cc:Complaint .
     ?Complaint cc:hasConsumer ?Consumer .
     ?Consumer cc:locationState ?State .
     ?Complaint cc:associatedIssue ?IssueURI .
    }
-   GRAPH <consumerComplaintsIssueHierarchy> {
+   GRAPH <consumerComplaintsIssueHierarchy_U##> {
     ?IssueURI rdfs:subClassOf* ?IssueCategory .
    }
    }
@@ -436,7 +444,7 @@ PREFIX sh:<http://www.w3.org/ns/shacl#>
 PREFIX cc:<http://consumer.demo.com/complaints#>
 
 INSERT DATA {
-  GRAPH <shapes-complaints> {
+  GRAPH <shapes-complaints_U##> {
     # General complaint rules
     cc:ComplaintShape a sh:NodeShape ;
       sh:targetClass cc:Complaint ;
@@ -485,7 +493,7 @@ PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX cc:<http://consumer.demo.com/complaints#>
 
 INSERT DATA {
-  GRAPH <consumerComplaintsBase> {
+  GRAPH <consumerComplaintsBase_U##> {
     # Missing narrative
     cc:BadComplaint1 rdf:type cc:Complaint .
     cc:BadComplaint1 cc:handledBy cc:Equifax .
@@ -515,9 +523,9 @@ Here we added a couple of complaints on purpose that break the rules. We did thi
 
 ```sql
 CALL SPARQL_EXECUTE('
-USING <shapes-complaints>
-VALIDATE <consumerComplaintsBase>
-CREATE REPORT GRAPH <report-complaints>
+USING <shapes-complaints_U##>
+VALIDATE <consumerComplaintsBase_U##>
+CREATE REPORT GRAPH <report-complaints_U##>
 ', '', ?, ?);
 ```
 Now, when we ran the validation:
@@ -538,7 +546,7 @@ SELECT * FROM SPARQL_TABLE('
 PREFIX sh:<http://www.w3.org/ns/shacl#>
 
 SELECT ?focusNode ?message ?path
-FROM <report-complaints>
+FROM <report-complaints_U##>
 WHERE {
   ?v a sh:ValidationResult ;
      sh:focusNode ?focusNode ;
