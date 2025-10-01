@@ -1,6 +1,7 @@
-# Getting started with your working environment 
+# Prepare your SAP HANA Cloud and Python environment in SAP Business Application Studio
 
-## Overview
+
+## Preparing your working environment overview
 
 In this SAP TechEd 2025 Hands-on Workshop __Unlocking AI-driven insights from your business data in SAP HANA Cloud__ (DA261), the exercises are to be pursued either using __SAP HANA Cloud Database Explorer__ , or using a __Business Application Studio Python environment__.
 <br><br>

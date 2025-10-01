@@ -1,4 +1,4 @@
-# Exercise 2 - Using Isolation Forest for Outlier Analysis on financial transaction data
+# Exercise 2 - Analyzing consumer complaints using text embeddings and machine learning
 SAP TechEd 2025, Hands-On Workshop: DA261 - Unlocking AI-driven insights from your business data in SAP HANA Cloud
 
 ## Understand exercise 2 scenario
@@ -51,11 +51,13 @@ and then execute the notebook cells
 - Execute the cells
 <br>![](/exercises/ex2/images/ex2.1_S2_hdf_describe.png)
 
+## Exercise 2.2  Analyze consumer sentiment using text analysis (optional)
 ### Step 3: Explore sentiment of consumer complaints (optional)
 - Execute the cells
 <br>![](/exercises/ex2/images/ex2.1_S3_complaints_disputed.png)
 
-### Step 4: Explore consumer complaints narratives using Text Embeddings and similarity search
+## Exercise 2.3 Search in consumer complaints narratives using similarity search (optional)
+### Step 4: Explore consumer complaints narratives using Text Embeddings and similarity search (optional)
 
 - Execute the cells
 <br>![](/exercises/ex2/images/ex2.1_S4_hdf_embeddings.png)
@@ -63,7 +65,7 @@ and then execute the notebook cells
 
 <br><br>
 
-## Sections 2.2 - Predicting company monetary relief from consumer complaints using AutoML classification models 
+## Exercise 2.4 - Predicting company monetary relief from consumer complaints using AutoML classification models 
 
 
 ### Step 5: Data selection and preparation 

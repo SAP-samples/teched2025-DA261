@@ -1,4 +1,4 @@
-# Exercise 1 - Using Isolation Forest for Outlier Analysis on financial transaction data
+# Exercise 1 - Outlier Analysis on financial transaction data using Isolation Forests
 SAP TechEd 2025, Hands-On Workshop: DA261 - Unlocking AI-driven insights from your business data in SAP HANA Cloud
 
 ## Understand exercise 1 scenario
@@ -66,7 +66,7 @@ In Step 2 of this exercise,
 
 <br><br>
 
-## Exercise 1.3 Applying massive, data-parallel Isolation Forests for outlier analysis
+## Exercise 1.3 Applying massive data parallel Isolation Forests for outlier analysis
 ![](/exercises/ex1/images/ex1.3-S5-if_massive.png)
 ![](/exercises/ex1/images/ex1.3-S6-if_massive_shap.png)
 

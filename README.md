@@ -17,23 +17,30 @@ Setup requirement instructions for pursuing this Hands-on Workshop in your local
 ## Exercises
 
 Here is overview of the exercises to be completed during this Hands-on Workshop, additional add-on exercises are optional and marked respectively.
-The [Getting Started](exercises/ex0/) should pursued first, the other main exercises can be pursued in order of personal interest.
+The [Getting Started - Prepare your working environment and tools](exercises/ex0/) should pursued first, the other main exercises 1, 2 and 3 can be pursued in order of personal interest.
 
-- [Getting Started](exercises/ex0/)
-- [Exercise 1 - Outlier Detection on ACDOCA](exercises/ex1/)
-    - [Exercise 1.1 - Exercise 1 Sub Exercise 1 Description](exercises/ex1#exercise-11-sub-exercise-1-description)
-    - [Exercise 1.2 - Exercise 1 Sub Exercise 2 Description](exercises/ex1#exercise-12-sub-exercise-2-description)
-- [Exercise 2 - Service Ticket Classification using Vectors and Machine Learning](exercises/ex2/)
-    - [Exercise 2.1 - Exercise 2 Sub Exercise 1 Description](exercises/ex2#exercise-21-sub-exercise-1-description)
-    - [Exercise 2.2 - Exercise 2 Sub Exercise 2 Description](exercises/ex2#exercise-22-sub-exercise-2-description)
-- [Exercise 3 - Consumer Complaints Knowledge Graph Search using SPARQL](exercises/ex3/)
-    - [Exercise 3.1 - Exercise 3 Sub Exercise 1 Description](exercises/ex3#exercise-31-sub-exercise-1-description)
-    - [Exercise 3.2 - Exercise 3 Sub Exercise 2 Description](exercises/ex3#exercise-32-sub-exercise-2-description)
+- [Getting Started - Prepare your working environment and tools](exercises/ex0/)
+  - [SAP HANA Cloud Database Explorer](exercises/ex0#Step-1---Getting-started-with-SAP-HANA-Cloud-Database-Explorer-and-SQL-console)
+  - [Python environment in SAP Business Application Studio](exercises/ex0#Step-2--Configuring-your-Python-environment-in-SAP-Business-Application-Studio)
+- [Exercise 1 - Outlier Analysis on financial transaction data](exercises/ex1/)
+    - [1.1 Exploring financial transaction data with SAP HANA dataframes](exercises/ex1#Exercise-1.1-Exploring-financial-transaction-data-with-SAP-HANA-dataframes)
+    - [1.2 Outlier analysis using Isolation Forests](exercises/ex1#Exercise-1.2-Outlier-analysis-using-Isolation-Forests)
+    - [1.3 Applying massive, data-parallel Isolation Forests for outlier analysis](Exercise-1.3-Applying-massive-data\-parallel-Isolation-Forests-for-outlier-analysis)
+- [Exercise 2 - Analyzing consumer complaints using text embeddings and machine learningg](exercises/ex2/)
+    - [2.1 Exploring consumer complaints data using SAP HANA dataframes](exercises/ex2#Exercise-2.1-Exploring-Consumer-Complaints-Data)
+    - [2.2 Analyze consumer sentiment using text analysis (optional)](exercises/ex2#Exercise-2.2-Analyze-consumer-sentiment-using-text-analysis-(optional))
+    - [2.3 Search in consumer complaints narratives using similarity search (optional)](exercises/ex2#Exercise-2.3-Search-in-consumer-complaints-narratives-using-similarity-search-(optional))
+    - [2.4 Predicting company monetary relief from consumer complaints using AutoML classification models ](exercises/ex2#Exercise-2.4---Predicting-company-monetary-relief-from-consumer-complaints-using-AutoML-classification-models)
+- [Exercise 3 - Analyse Consumer Complaints Data using Knowledge Graphs](exercises/ex3/)
+    - [3.1 Create the Knowledge Graph](exercises/ex3#Exercise-3.1-Create-the-Knowledge-Graph)
+    - [3.2 Visualize the Knowledge Graph](exercises/ex3#Exercise-3.2-Visualize-the-Knowledge-Graph)
+    - [3.3 Query the Knowledge Graph](exercises/ex3#Exercise-3.3-Query-the-Knowledge-Graph)
+    - [3.4 Add Product and Issue Hierarchies](exercises/ex3#Exercise-3.4-Add-Product-and-Issue-Hierarchies)
+    - [3.5 Querying with Hierarchies](exercises/ex3#Exercise-3.5-Querying-with-Hierarchies)
+    - [3.6 Validate the Knowledge Graph with SHACL](exercises/ex3#Exercise-3.6-Validate-the-Knowledge-Graph-with-SHACL)
 
-<br><br>
-- [Exercise 9 - template exercise chapter](exercises/ex9/)
-    - [Exercise 9.1 - Exercise 9 Sub Exercise 1 Description](exercises/ex9#exercise-91-sub-exercise-1-description)
-    - [Exercise 9.2 - Exercise 9 Sub Exercise 2 Description](exercises/ex9#exercise-92-sub-exercise-2-description)
+<br>
+
 
 ## Contributing
 Please read the [CONTRIBUTING.md](./CONTRIBUTING.md) to understand the contribution guidelines.

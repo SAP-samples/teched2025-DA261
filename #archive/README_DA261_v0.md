@@ -1,5 +1,9 @@
 # DA261 - Unlocking AI-driven insights from your business data in SAP HANA Cloud
 
+- [Exercise 9 - template exercise chapter](exercises/ex9/)
+    - [Exercise 9.1 - Exercise 9 Sub Exercise 1 Description](exercises/ex9#exercise-91-sub-exercise-1-description)
+    - [Exercise 9.2 - Exercise 9 Sub Exercise 2 Description](exercises/ex9#exercise-92-sub-exercise-2-description)
+
 ## Description
 
 This repository contains the material for the SAP TechEd 2025 Hands-on Workshop __Unlocking AI-driven insights from your business data in SAP HANA Cloud__ (Session-ID DA261).  
