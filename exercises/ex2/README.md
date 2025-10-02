@@ -18,7 +18,7 @@ To start with the exercise
 
 - The notbook then opens
 <br>![](/exercises/ex2/images/ex2_notebook_opened.png)
-<br><br>
+<br>
 
 Throughout the exercise, 
 - you will be asked to __review__ and __adjust/edit__ the python code within the notebook code-cells
@@ -28,8 +28,10 @@ and then execute the notebook cells
 - you should start executing each cell individually using the Play-icon to the left of the cell, , 
     ![](/exercises/ex2/images/nbk_execute.png)
 - at a later point, you may execute all cells following the current one, using the Play-icon with the Top-Down-arrow in the right upper corner of the cell.
+<br>
 
-
+Once the notebook file is opened, you can open the  by clicking __Outline__ in the header of the notebook, the notebook __outline-view__ the opens to the left, and is helpful for oversight and navigation through the content of the notebook. You can arrange size of outline-view to your needs.
+<br>![](/exercises/ex2/images/nbk_outline.png)
 
 <br><br>
 

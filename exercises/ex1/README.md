@@ -26,9 +26,15 @@ and then execute the notebook cells
 - you should start executing each cell individually using the Play-icon to the left of the cell, , 
     ![](/exercises/ex1/images/nbk_execute.png)
 - at a later point, you may execute all cells following the current one, using the Play-icon with the Top-Down-arrow in the right upper corner of the cell.
-<br><br>
+
+<br>
+
+Once the notebook file is opened, you can open the  by clicking __Outline__ in the header of the notebook, the notebook __outline-view__ the opens to the left, and is helpful for oversight and navigation through the content of the notebook. You can arrange size of outline-view to your needs.
+<br>![](/exercises/ex1/images/nbk_outline.png)
+
 
 <br><br>
+
 ## Exercise 1.0 - Connect to your SAP HANA Cloud instance
 
 In this Exercise 1 step 0, you will execute the python cells in the notebook-file to establish the SAP HANA Cloud datbase connection.
