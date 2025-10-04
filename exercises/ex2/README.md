@@ -2,7 +2,7 @@
 SAP TechEd 2025, Hands-On Workshop: DA261 - Unlocking AI-driven insights from your business data in SAP HANA Cloud
 
 ## Understand exercise 2 scenario
-In this exercise, you will explore how to analyze financial transaction data (ACDOCA, Universal Journal) for Outlier Analysis using machine learning techniques like Isolation Forest.
+In this exercise, you will explore how to classify and process consumer complaints texts using text analysis for sentiment detection, similarity search with text embeddings and AutoML techniques to build a consumer complaints classification machine learning model, unlocking the semantic understanding of text data as text embedding feature with machine learning models.
 <br><br>
 
 ## Getting started | How to Guide
