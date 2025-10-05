@@ -10,9 +10,9 @@ In this workshop you will learn how to utilize SAP HANA Cloud's AI capabilities 
 
 ## Requirements
 
-The technical requirements to complete the exercises in this repository, including hardware and software specifications are taken care of by the provided systems used for the in-person Hands-on Workshop. Required _configuration tasks_ are outlined in the [Getting Started](exercises/ex0/) section.
+The technical requirements to complete the exercises in this repository, including hardware and software specifications are taken care of by the provided systems used for the in-person Hands-on Workshop. Required _configuration tasks_ are outlined in the [Getting Started - Prepare your working environment and tools](exercises/ex0/) section.
 
-Setup requirement instructions for pursuing this Hands-on Workshop in your local or trial / free-tier environment are documented in the [setup prerequisites](zappendix/setup_prerequisites.md)
+
 
 ## Exercises
 
@@ -26,7 +26,7 @@ The [Getting Started - Prepare your working environment and tools](exercises/ex0
     - [1.1 Exploring financial transaction data with SAP HANA dataframes](exercises/ex1#Exercise-1.1-Exploring-financial-transaction-data-with-SAP-HANA-dataframes)
     - [1.2 Outlier analysis using Isolation Forests](exercises/ex1#Exercise-1.2-Outlier-analysis-using-Isolation-Forests)
     - [1.3 Applying massive, data-parallel Isolation Forests for outlier analysis](Exercise-1.3-Applying-massive-data\-parallel-Isolation-Forests-for-outlier-analysis)
-- [Exercise 2 - Analyzing consumer complaints using text embeddings and machine learningg](exercises/ex2/)
+- [Exercise 2 - Analyzing consumer complaints using text embeddings and machine learning](exercises/ex2/)
     - [2.1 Exploring consumer complaints data using SAP HANA dataframes](exercises/ex2#Exercise-2.1-Exploring-Consumer-Complaints-Data)
     - [2.2 Analyze consumer sentiment using text analysis (optional)](exercises/ex2#Exercise-2.2-Analyze-consumer-sentiment-using-text-analysis-(optional))
     - [2.3 Search in consumer complaints narratives using similarity search (optional)](exercises/ex2#Exercise-2.3-Search-in-consumer-complaints-narratives-using-similarity-search-(optional))

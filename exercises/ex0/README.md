@@ -5,7 +5,7 @@
 
 In this SAP TechEd 2025 Hands-on Workshop __Unlocking AI-driven insights from your business data in SAP HANA Cloud__ (DA261), the exercises are to be pursued either using __SAP HANA Cloud Database Explorer__ , or using a __Business Application Studio Python environment__.
 <br><br>
-You will work with the following technical environment
+### You will work with the following technical environment
 - a centrally provided __SAP HANA Cloud database system__ 
   - with your personal user-id and schema, with full access to the objects in their own schema
   - shared data provided within a separate, read-only, schema __DA261_SHARE__
@@ -16,7 +16,8 @@ You will work with the following technical environment
 
 The technical requirements to complete the exercises in this repository, including hardware and software specifications are taken care of by the provided systems used for the in-person Hands-on Workshop. Required _configuration tasks_ are outlined in the following [Getting Started instructions](exercises/ex0/) section.
 
-Setup requirement instructions for pursuing this Hands-on Workshop in your local or trial / free-tier environment are documented in the [setup prerequisites](zappendix/setup_prerequisites.md)
+### Setup instruction in your "private" environment
+Setup requirement instructions for pursuing this Hands-on Workshop in your local or trial / free-tier environment are documented in the [private setup prerequisites README](exercises/ex0/README_private_setup.md)
 
 
 ## Step 1 - Getting started with SAP HANA Cloud Database Explorer and SQL console
@@ -61,10 +62,8 @@ select * from dummy
 
 ```
 
-- After successfully logging in to the SAP HANA Cloud Database Explorer, the next step is to copy the data for the exercises.
-```sql 
-?? Copy tables command
-```
+
+
 <br><br><br>
 
 ## Step 2 - Configuring your Python environment in SAP Business Application Studio

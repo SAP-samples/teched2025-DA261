@@ -9,7 +9,7 @@ In this exercise, you will explore how to apply machine learning techniques like
 During this exercise, you will work with Jupyter Notebooks and a Python environment available within SAP Business Application Studio.
 You will mainly work with notebook scripts using the Python Machine Learning client for SAP HANA, which generates SQL for immediate execution within the connected SAP HANA Cloud instance.
 <br><br>
-To start with the exercise
+### To start with the exercise
 - open the notebook file __ex1_notebook.ipynb__ from the project explorer
   - from the context menu, select open
   - ![](/exercises/ex1/images/ex1_notebook_open.png)
@@ -18,7 +18,7 @@ To start with the exercise
 <br><br>
 
 
-Throughout the exercise, 
+### Furthermore, throughout the exercise, 
 - you will be asked to __review__ and __adjust/edit__ the python code within the notebook code-cells
     ![](/exercises/ex1/images/nbk_edit.png)  
 
@@ -29,20 +29,23 @@ and then execute the notebook cells
 
 <br>
 
-Once the notebook file is opened, you can open the  by clicking __Outline__ in the header of the notebook, the notebook __outline-view__ the opens to the left, and is helpful for oversight and navigation through the content of the notebook. You can arrange size of outline-view to your needs.
+### Keep the overview
+Once the notebook file is opened,
+- you can open the  by clicking __Outline__ in the header of the notebook, 
+- the notebook __outline-view__ the opens to the left, and is helpful for oversight and navigation through the content of the notebook. 
+- You can arrange size of outline-view to your needs.
 <br>![](/exercises/ex1/images/nbk_outline.png)
 
 
 <br><br>
 
 ## Exercise 1.0 - Connect to your SAP HANA Cloud instance
-
-In this Exercise 1 step 0, you will execute the python cells in the notebook-file to establish the SAP HANA Cloud datbase connection.
+### Step 0: Establish and check connection
+- As the initial step you will execute the python cells in the notebook-file to establish the SAP HANA Cloud database connection.
 <br>![](/exercises/ex1/images/0-start.png)
 
-Follow the instructions in the notebook-file.
-
-After completing these steps you will see the connection could be established in the cell output.
+- Further follow the instructions in the notebook-file.
+- After completing these steps you will see the connection could be established in the cell output.
 <br>![](/exercises/ex1/images/0-connected.png)
 
 
@@ -50,53 +53,69 @@ After completing these steps you will see the connection could be established in
 <br><br>
 
 ## Exercise 1.1 Exploring financial transaction data with SAP HANA dataframes
-
-In Step 1 of this exercise, 
+### Step 1: Create HANA dataframe for the financial business transaction sample table
+In __Step 1__ of this exercise, 
 - you will learn how to create a HANA dataframe
 - how to use methods to understand the data structure of the result set underlying the dataframe select query
 - understand when data is moved from HANA into the python environment
 
-![](/exercises/ex1/images/ex1.1-S1-dataframe.png)
+![](/exercises/ex1/images/ex1.1-S1-dataframe.png)  
+  
+- you will have further learned how to display filtered results sets from HANA dataframes in python  
+
+![](/exercises/ex1/images/ex1.1-S1-collectTOP5.png)
+
 
 <br>
-In Step 2 of this exercise, 
-- you will learn how to use dataframe methods to filter the underlying query result set query, change its projections or apply aggregations
-  
-![](/exercises/ex1/images/ex1.1-S2-hdf-filter.png)
+
+### Step 2: Explore the ACDOCA sample data using HANA dataframe methods
+In __Step 2__ of this exercise,  
+
+- you will learn how to use dataframe methods to filter the underlying query result set, change the column projections and more
+  ![](/exercises/ex1/images/ex1.1-S2-hdf-filter2.png)
 
 <br><br>
 
 ## Exercise 1.2 Outlier analysis using Isolation Forests
-![](/exercises/ex1/images/ex1.2-S3-if.png)
-![](/exercises/ex1/images/ex1.2-S4-if_shap.png)
+### Step 3: Execute basic outlier analysis using Isolation Forest
+In __Step 3__ of this exercise,  
+- you will learn how to perform and outlier analysis using the Isolation Forest-method from the Predictive Analysis Library (PAL)
+  ![](/exercises/ex1/images/ex1.2-S3-if.png)
+- review the outlier analysis results in tables and graphics  
+  ![](/exercises/ex1/images/ex1.2-S3-if-res-tab.png)
+  ![](/exercises/ex1/images/ex1.2-S3-if-res-plot.png)
+- and have learned how to inspect the generated and executed SQL code statements
+  ![](/exercises/ex1/images/ex1.2-S3-if-SQL.png)
+
+### Step 4: Add shapley explanations to Isolation Forest outlier predictions
+In __Step 4__ of this exercise,  
+- you will learn how to apply SHAPley Additive Explanation with the outlier predictions, thus being able to provide insights with the predictions, on why a datapoint has been classified as outlier by the model 
+  ![](/exercises/ex1/images/ex1.2-S4-if_shap.png)
+
+- will have generated SHAPley explainer summary plots, illustrating features relative impact on outlier classification at overall model's level
+  ![](/exercises/ex1/images/ex1.2-S4-if_shap_summary.png)
+
 
 <br><br>
 
 ## Exercise 1.3 Applying massive data parallel Isolation Forests for outlier analysis
+### Step 5: Data-parallel outlier analysis per "G/L Account"
+In __Step 5__ of this exercise,  
+- you will learn how to apply the Isolation Forest outlier analysis in parallel on each subset of a "G/L Account", i.e. execute a massive data-paralle analysis
 ![](/exercises/ex1/images/ex1.3-S5-if_massive.png)
-![](/exercises/ex1/images/ex1.3-S6-if_massive_shap.png)
+
+
 
 <br><br>
 
-## Template
-<br>![](/exercises/ex1/images/ex1_notebook_opened.png)
-
-
 ## Summary
 
-You've now ...
+You've now completed exercise 1, great !
 
-Continue to - [Exercise 2 - Exercise 2 Description](../ex2/README.md)
+Continue to - [Exercise 2 - Analyzing consumer complaints using text embeddings and machine learning](../ex2/README.md)
 
-## Appendix
-1.	Enter this code.
-```abap
-DATA(lt_params) = request->get_form_fields(  ).
-READ TABLE lt_params REFERENCE INTO DATA(lr_params) WITH KEY name = 'cmd'.
-  IF sy-subrc <> 0.
-    response->set_status( i_code = 400
-                     i_reason = 'Bad request').
-    RETURN.
-  ENDIF.
 
-```
+<br><br>
+
+## Further reference information and examples 
+Note the appendix section of the ex1_notebook.ipynb-file might include additional expert-level details for your offline study, incl. reference to the data used in the exercise.
