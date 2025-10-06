@@ -14,54 +14,68 @@ In this SAP TechEd 2025 Hands-on Workshop __Unlocking AI-driven insights from yo
 - and a __Python Jupyter Notebook environment__ within a provided __SAP Business Application Studio__ instance (referred to as __BAS__)
   - _SAP Business Application Studio (BAS) is a cloud-based professional developer tool for building applications and extending SAP solutions._
 
-The technical requirements to complete the exercises in this repository, including hardware and software specifications are taken care of by the provided systems used for the in-person Hands-on Workshop. Required _configuration tasks_ are outlined in the following [Getting Started instructions](exercises/ex0/) section.
+The technical requirements to complete the exercises in this repository, including hardware and software specifications are taken care of by the provided systems used for the in-person Hands-on Workshop. Required _configuration tasks_ are outlined in the following [Getting Started instructions](exercises/ex0/) section below.
 
 ### Setup instruction in your "private" environment
-Setup requirement instructions for pursuing this Hands-on Workshop in your local or trial / free-tier environment are documented in the [private setup prerequisites README](exercises/ex0/README_private_setup.md)
+- Setup requirement instructions for pursuing this Hands-on Workshop in your local or trial / free-tier environment are documented in the [private setup prerequisites README](exercises/ex0/README_private_setup.md). 
+- Note, it is not intended run pursue this exercise in your private environment during the hands-on session, the instructions intend is rather to you repeat or continue to pursue the session content after the TechEd 2025 event.
 
+<br>
 
 ## Step 1 - Getting started with SAP HANA Cloud Database Explorer and SQL console
 
 ### Logging into Database Explorer (DBX)
-<li>Open the SAP HANA Database Explorer URL  
-
-Database Explorer [link](https://hana-cockpit-004.cfapps.eu10.hana.ondemand.com/hrtt/sap/hana/cst/catalog/cockpit-index.html?databaseid=C3683523)  
+- __Open__ the SAP HANA Database Explorer __URL__  
+   - Database Explorer [link](https://hana-cockpit-004.cfapps.eu10.hana.ondemand.com/hrtt/sap/hana/cst/catalog/cockpit-index.html?databaseid=C3683523)  
 (https://hana-cockpit-004.cfapps.eu10.hana.ondemand.com/hrtt/sap/hana/cst/catalog/cockpit-index.html?databaseid=C3683523)
 
-<li> Select Sign in to another account
+- Select __Sign in to another account__
+<br>  ![](./images/DBX_BTP_sign-in.png)
 
-<br>![](./images/DBX_BTP_sign-in.png)
+<br>
 
+- In the __Choose your identity provider__ step
+  -  _Type_ __academy-platform__ as the IDP and 
+  -  then select __"Sign in with alternative identity provider"__.
+<br>  ![](./images/DBX_BTP_sign-in_id-provider.png)
 
-- _Type_ __academy-platform__ as the IDP and then select __"Sign in with alternative identity provider"__.
+<br>
 
-<br>![](./images/DBX_BTP_sign-in_id-provider.png)
+- __Note__: If the following Application Authorization screen appears, select __AUTHORIZE__ to continue.
+<br>  ![](./images/DBX_BTP_sign-in_authorize.png)
 
+<br>
 
-__Note__: If the following Application Authorization screen appears, select __AUTHORIZE__ to continue.
+- In the __Sign In__ step, __enter__ the __UserId__ and __password__ provided the workshop speaker and __according to your desk-id__
+  - User ID: \<as provided, example __AC######U##__\>
+  - Password: \<as provided\> 
+  - Then select __Continue__.
+<br> ![](./images/DBX_BTP_sign-in_finalstep.png)
 
-<br>![](./images/DBX_BTP_sign-in_authorize.png)
+<br>
 
-
-- Enter the UserId and password provided the workshop speaker and according to your desk-id
-  - User ID: \<as provided, example AC######U##\>
-  - Password: \<as provided\>
-
--  Then select __Continue__.
-<br>![](./images/DBX_BTP_sign-in_finalstep.png)
-
-- Once logged into DBX, the application will prompt you to enter credentials for logging in to SAP HANA Cloud  instance. Use the same credentials for the database connection as in the earlier step.
+Now, once the login to SAP HANA Database Explorer application was successful
+-  the application will __prompt__ you __again to enter credentials__ for logging in to the __database instance__. 
+-  __Re-use__ the __same credentials__ for the database connection as you used in the previous step.
 <br>![](./images/DBX_conn_credentials_prompts.png)
 
-- Now, the SAP HANA Database Explorer is ready to be used:
+- __Now, the SAP HANA Database Explorer is ready to be used__:
 <br>![](./images/DBX_ready.png)
 
+
+<br>
+
+- Open a SQL editor
+<br>![](./images/DBX_openSQL.png)
+
+<br>
+
 - Execute the following SQL query
-```sql
-select * from dummy
+   ```sql
+   select * from dummy;
 
-```
-
+   ```
+   ![](./images/DBX_execSQL.png)
 
 
 <br><br><br>
@@ -107,15 +121,18 @@ This exercise uses the Jupyter Notebooks extension in SAP Business Application S
 ### 2.2 Cloning the DA261 repository project
 The following steps are to setup the required notebook.
 
-1 On the Get Started page in Business Application Studio, select the option Clone from Git to import a repository from Github.
+1.  On the Get Started page in Business Application Studio, select the option Clone from Git to import a repository from Github.
 <br>![](./images/BAS_clone_from_github.png)
 
-2. A prompt will appear on top asking for a URL to the repository. Copy and paste in the following URL and then press Enter.
-> https://github.com/SAP-samples/teched2025-DA261.git
+<br>
 
+2. A prompt will appear on top asking for a URL to the repository. Copy and paste in the following URL and then press Enter.
+   - https://github.com/SAP-samples/teched2025-DA261.git
 <br>![](./images/BAS_clone_path.png)
 
-3 The following message will appear. Select Open to see the imported files in the Explorer window.
+<br>
+
+3. The following message will appear. Select Open to see the imported files in the Explorer window.
 <br>![](./images/BAS_open_cloned_repo.png)
 
 4. The files should now be visible in the Explorer pane on the left hand side. 
@@ -124,65 +141,83 @@ The following steps are to setup the required notebook.
 <br><br>
 
 ### 2.3 Configure the python runtime
-- Select the Jupyter Notebook __ex0_1_python_setup.ipynb__ to open it.
+The prepared python runtime and tools, as part of the Business Application Studio dev-space, requires some additional refinement regarding python package installations and connection to the SAP HANA Cloud database from Python.  
+
+Pursue the following steps
+1. Select the Jupyter Notebook __/exercises/ex0/ex0_1_python_setup.ipynb__ to __open__ it from the project explorer tree.
 <br>![](./images/BAS_python_setup_jnb.png)  
 
-<br><br>
-
-<br><br>
-
-### 2.4 Configure Jupyter and Python Extensions
-
-1. The notebook, with executable code cells, will be displayed on the screen.
+2. The notebook, with executable code cells, will be displayed on the screen.
    <br>![](./images/BAS_open_jnb.png)
 
-> In the next section the python environment will be configured so that the code cells can be executed from within the Jupyter notebook.
-
-2 Run the first code cell to install the required python modules.
-
-> Note: To execute a code cell, click on the play icon beside the cell. It is also possible to execute it by clicking into the code cell and pressing Shift+Enter.
+3. Scroll down to the notebook script cell with the __!pip install ... commands__ 
+   - Run the code cell to install the required python modules.
+   - Note, in order to __execute a code cell__, __click__ on the __play icon__ beside to the cell on the left.  
+   It is also possible to execute it by clicking into the code cell and pressing Shift+Enter.
    <br>![](./images/BAS_python_pipinst1.png)
 
-3 When the first cell is executed, a prompt asking to choose a kernel source will appear. Select Python Environments.
+
+4. When the first cell is executed, you will be __prompted__ asking to __choose a python kernel__ 
+   - Select __Python Environments....__
    <br>![](./images/BAS_python_select_env.png)
 
-4 On the next screen, select the recommended Python kernel (3.13.1).
+5. On the next prompt window
+   - select the recommended kernel __Python (3.13.1)__
    <br>![](./images/BAS_python_select_env_3131.png)
 
-5. The required libraries will now start installing, and some messages about port numbers will also be visible in the lower right corner. This could take a few minutes to complete also.
+6. The __required libraries__ will now __start installing__
+   - This could take a few minutes to complete
+   - Some messages about port numbers will also be visible in the lower right corner, which can be ignored and closed. 
    <br>![](./images/BAS_python_install_env_log.png)
 
-6 Once the libraries have been successfully installed, the kernel must be restarted. Do this by clicking on the Restart option in the menu bar at the top.
+7. Once the libraries have been successfully installed, the __kernel must be restarted__. 
+   - Do this by __clicking__ on the __Restart__-icon in the menu bar at the top.
    <br>![](./images/BAS_python_env_restart.png)
 
-7 On the following pop-up message box, click on Restart again to complete the process.
+8. In the following pop-up prompt window
+   - __click__ on __Restart__ again to confirm and complete the process.
+   - note, it will take a few seconds for the kernel to restart
    <br>![](./images/BAS_python_env_restart_confirm.png)
 
-> Note: It will take a few seconds for the kernel to restart and once done, the environment is ready for use!
+<br>
 
-### Prepare the HANA Cloud database connection properties
-Create a copy of the [./ex0/temp_user.ini](ex0/temp_user.ini) file and rename it to [./ex0/user.ini](ex0/user.ini) 
-<br>![](./images/BAS_python_copy_tmpuserini.png)
-<br>![](./images/BAS_python_paste_tmpuserini.png)
-<br>![](./images/BAS_python_rename_tmpuserini.png)
-<br>![](./images/BAS_python_rename_userini.png)
+__Once the kernel is restarted, the environment is ready for use!__
 
 <br><br>
-and 
-2. the user and the password given to you by the instructor are updated in `user.ini` file 
+
+### 2.4 Prepare the HANA Cloud database connection properties
+For our convenience, we will prepare the database connection credentials within a *.ini-file, which we can easily consume from the Python notebooks and avoid repeated crendential prompting.
+
+Pursue the following steps
+
+1. Create a copy of the [./ex0/temp_user.ini](ex0/temp_user.ini) file and rename it to [./ex0/user.ini](ex0/user.ini) 
+   - copy the file
+<br>![](./images/BAS_python_copy_tmpuserini.png)
+   - paste the file
+<br>![](./images/BAS_python_paste_tmpuserini.png)
+   - rename the file
+<br>![](./images/BAS_python_rename_tmpuserini.png)
+   - rename as user.ini
+<br>![](./images/BAS_python_rename_userini.png)
+
+<br> 
+
+2. Edit and enter the __user__ and the __password__ given to you by the instructor in __user.ini__-file 
+   - save the file
 <br>![](./images/BAS_python_edit_userini.png)
 
-then execute the next cells to test the connection
+3. Next execute the following python code cells to test the SAP HANA Cloud database connection
 <br>![](./images/BAS_python_check-connection_userini.png)
 
-You should have successfully connect to the SAP HANA Cloud instance with hostname:
-__13b7c15d-848f-40b5-9259-c9c36ab85f56.hna1.prod-eu10.hanacloud.ondemand.com__
+You should have successfully connect to the SAP HANA Cloud instance with hostname:  
+   - __13b7c15d-848f-40b5-9259-c9c36ab85f56.hna1.prod-eu10.hanacloud.ondemand.com__
 
-<br><br><br>
+<br>
 
-### Using the connection setup in the exercises
+### 2.5 Using the connection setup in the exercises
 > Note: the notebook file __ex0_2-check_setup.ipynb__ will be used throughout exercise 1 and 2, no change to the file is required.
 
+<br><br>
 
 ## Summary
 Now that you have successfully prepared your Python environment in SAP Business Application Studio and have connected successfully to the SAP HANA Cloud instance,  
