@@ -16,7 +16,9 @@ This provides a more semantic and hierarchical view of the data, allowing you to
 
 After completing these steps you will have created a Knowledge Graph from the Consumer Complaints table.
 
-1. Open the SAP HANA Cloud Central tool and navigate to SQL Console section.  
+1. Open the SAP HANA Database Explorer and navigate to SQL Console section.  
+   Database Explorer [link](https://hana-cockpit-004.cfapps.eu10.hana.ondemand.com/hrtt/sap/hana/cst/catalog/cockpit-index.html?databaseid=C3683523)  
+(https://hana-cockpit-004.cfapps.eu10.hana.ondemand.com/hrtt/sap/hana/cst/catalog/cockpit-index.html?databaseid=C3683523)
 
 
 2. Run the following SQL query to create triples from your consumer complaints table:
