@@ -258,7 +258,7 @@ WHERE {
 ### Now next, let's create Issue Hierarchy knowledge graph
 
 The following code inserts hierarchy triples mapping each issue to a broader issue category.
-- note, adjust the Hierachy name in the query __<consumerComplaintsProductHierarchy_U##>__ to match the index of your assgined user id before execution
+- note, adjust the Hierachy name in the query __<consumerComplaintsIssueHierarchy_U##>__ to match the index of your assgined user id before execution
 
 ```sql
 CALL SPARQL_EXECUTE('
@@ -344,7 +344,7 @@ This is where the Knowledge Graph approach clearly outshines flat SQL.
 2. **Credit card complaints - by ProductCategory × IssueCategory × Company × Outcome × State**
   
    This query shows how multiple hierarchies and attributes can be combined in one SPARQL query.
-- note, adjust the Grpah instance name __<consumerComplaintsBase_U##>__ and Hierachy name __<consumerComplaintsProductHierarchy_U##>__ in the query  to match the index of your assgined user id before execution
+- note, adjust the Grpah instance name __<consumerComplaintsBase_U##>__ and Hierachy name __<consumerComplaintsProductHierarchy_U##>__ , __<consumerComplaintsIssueHierarchy_U##>__ in the query  to match the index of your assgined user id before execution
    ```sql
    SELECT * FROM SPARQL_TABLE('
    PREFIX cc:<http://consumer.demo.com/complaints#>
@@ -382,7 +382,7 @@ This is where the Knowledge Graph approach clearly outshines flat SQL.
    ```
 
 3. **Top Issue Categories by State**
-
+- note, adjust the Grpah instance name __<consumerComplaintsBase_U##>__ and Hierachy name  __<consumerComplaintsIssueHierarchy_U##>__ in the query  to match the index of your assgined user id before execution
    ```sql
    SELECT * FROM SPARQL_TABLE('
    PREFIX cc:<http://consumer.demo.com/complaints#>
