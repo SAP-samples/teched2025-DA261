@@ -6,8 +6,9 @@ The exercise shows how to:
 * Create a Knowledge Graph directly from relational complaint data stored in HANA Cloud.
 * Model key entities such as **Complaint**, **Consumer**, **Product**, **Issue**, **Company**, and **Outcome**.
 * Link the data using semantic relationships (e.g., a complaint is related to a product, associated with an issue, and handled by a company).
-* Visualize the resulting Knowledge Graph using the **SAP HANA Cloud Central tool**.
 * Run **SPARQL queries** on the Knowledge Graph to perform advanced analysis that goes beyond flat SQL queries.
+* Visualize the resulting Knowledge Graph using the **SAP HANA Cloud Central tool** (optional).
+
 
 This provides a more semantic and hierarchical view of the data, allowing you to analyse consumer complaints with **hierarchies, relationships, and reasoning**.
 
@@ -19,8 +20,8 @@ After completing these steps you will have created a Knowledge Graph from the Co
 
 
 2. Run the following SQL query to create triples from your consumer complaints table:
-   - adjust the Graph instance name __<consumerComplaintsBase_U##>__ to match the index of your assgined user id  
-   [replace ## with index of your assgined user id]
+   - **Adjust the Graph instance name __<consumerComplaintsBase_U##>__ to match the index of your assgined user id**
+   **[replace ## with index of your assgined user id]**
         
 ```sql
 CALL SPARQL_EXECUTE('
@@ -100,34 +101,15 @@ In short:
 
 This structure enables you to run **SPARQL queries** to explore relationships and hierarchies that would be very hard to capture with plain SQL.
 
-## Exercise 3.2 Visualize the Knowledge Graph
+## Exercise 3.2 Query the Knowledge Graph
 
-After creating the Knowledge Graph, let’s visualize it using the SAP HANA Cloud Central tool.
-
-1. In HANA Cloud Central, go to the **Database Objects** section.
-2. On the top right corner, click on your **profile icon** and open **Settings**.
-3. In the **Displayed Database Object Types** list, check the option **RDF Named Graphs**.
-4. Click **Save**.
-5. Now return to the **Database Objects** page and select the section **RDF Named Graph**.
-6. You will see the Knowledge Graph you just created – **`consumerComplaintsBase`** listed.
-7. Click on it and then open the **Graph Ontology** tab.
-8. You can now **visualize the Knowledge Graph** with the respective classes and relationships created in the previous step.
-
-
-By enabling **RDF Named Graphs** in the HANA Cloud Central, we are able to see and explore the Knowledge Graph visually:
-- **Nodes** represent entities such as Complaint, Company, Product, Issue, Outcome, and Consumer.
-- **Edges** represent the relationships such as `cc:handledBy`, `cc:isRelatedTo`, and `cc:associatedIssue`.
-- This visualization helps confirm that our triples were created correctly and provides an intuitive way to understand how consumer complaint data is connected.
-
-## Exercise 3.3 Query the Knowledge Graph
-
-Now that we have created and visualized the Knowledge Graph, let’s run some SPARQL queries against it.  
+Now that we have created the Knowledge Graph, let’s run some SPARQL queries against it.  
 We will use `SPARQL_TABLE` to query the graph directly from SQL.
 
 1. **Check contents of the Knowledge Graph**
 
    Run the following query to fetch a few complaints with their associated company, product, issue, and outcome:
-   - note, adjust the Graph instance reference in the query __<consumerComplaintsBase_U##>__ to match the index of your assgined user id before execution
+   - **Note, adjust the Graph instance reference in the query __<consumerComplaintsBase_U##>__ to match the index of your assgined user id before execution**
 
    ```sql
    SELECT *
@@ -192,7 +174,7 @@ We will use `SPARQL_TABLE` to query the graph directly from SQL.
 * Verified that relationships between Complaint, Company, Product, Issue, and Outcome are working as expected.  
 * Applied a filter to restrict results to complaints where the outcome was 'Closed with monetary relief'
 
-## Exercise 3.4 Add Product and Issue Hierarchies
+## Exercise 3.3 Add Product and Issue Hierarchies
 
 So far, our Knowledge Graph has been modeled with complaints, companies, products, issues, outcomes, and consumers as they appear in the source table.  
 However, the **raw product names** and **issue descriptions** in the table are very granular (e.g., *“Credit card”*, *“Account status incorrect”*).  
@@ -325,7 +307,7 @@ WHERE {
 - Mapped granular issue names (e.g., *“Account status incorrect”*, *“Late fee”*) to broader categories like **Account Servicing** or **Billing & Payment**.  
 - Built a classification model where SPARQL can automatically roll up details to higher categories using `rdfs:subClassOf*`.  
 
-## Exercise 3.5 Querying with Hierarchies
+## Exercise 3.4 Querying with Hierarchies
 
 With the Product and Issue hierarchies in place, we can now run more powerful SPARQL queries that automatically roll up granular values into higher-level categories.  
 This is where the Knowledge Graph approach clearly outshines flat SQL.
@@ -423,7 +405,7 @@ This is where the Knowledge Graph approach clearly outshines flat SQL.
    ```
    This query shows how easily we can combine geography (consumer state) with semantic issue hierarchies.
 
-## Exercise 3.6 Validate the Knowledge Graph with SHACL
+## Exercise 3.5 Validate the Knowledge Graph with SHACL
 
 The SAP HANA Cloud Knowledge Graph engine supports **SHACL (Shapes Constraint Language)** validation.  
 This allows us to define **rules** for our graph data, for example, every complaint must have a narrative, or credit card complaints must always be closed.  
@@ -557,15 +539,39 @@ WHERE {
 ```
 Here wee asked the system to show us the validation results.  Now we can clearly see which complaints broke the rules and why. This makes it easy to spot and fix bad data right away.
 
+## Exercise 3.6 Visualize the Knowledge Graph (Optional)
+
+Once the Knowledge Graph is created, you can visualize it using the SAP HANA Cloud Central tool. Please note that this functionality is not currently supported on the TechEd HANA Cloud landscape.
+You are welcome to explore it at your own pace using your own licensed SAP HANA Cloud instance via the SAP HANA Cloud Central tool.
+
+1. In HANA Cloud Central, go to the **Database Objects** section.
+   ![](/exercises/ex3/images/HCC_DatabaseObjects.png) 
+2. On the top right corner, click on your **profile icon** and open **Settings**.
+   ![](/exercises/ex3/images/HCC_Settings.png) 
+3. In the **Displayed Database Object Types** list, check the option **RDF Named Graphs**.
+4. Click **Save**.
+   ![](/exercises/ex3/images/HCC_Select_RDFNamedGraphs.png) 
+5. Now return to the **Database Objects** page and select the section **RDF Named Graph**.
+   ![](/exercises/ex3/images/HCC_View_RDFNamedGraphs.png) 
+6. You will see the Knowledge Graph you just created – **`consumerComplaintsBase`** listed.
+7. Click on it and then open the **Graph Ontology** tab.
+8. You can now **visualize the Knowledge Graph** with the respective classes and relationships created in the previous step.
+   ![](/exercises/ex3/images/HCC_View_GraphOntology.png) 
+
+
+By enabling **RDF Named Graphs** in the HANA Cloud Central, we are able to see and explore the Knowledge Graph visually:
+- **Nodes** represent entities such as Complaint, Company, Product, Issue, Outcome, and Consumer.
+- **Edges** represent the relationships such as `cc:handledBy`, `cc:isRelatedTo`, and `cc:associatedIssue`.
+- This visualization helps confirm that our triples were created correctly and provides an intuitive way to understand how consumer complaint data is connected.
 
 ## Summary and Next Steps
 
 In this exercise set, we:  
-- Created a Knowledge Graph from flat complaint records in HANA Cloud.  
-- Visualized the graph to see how complaints, companies, products, issues, and consumers are connected.  
+- Created a Knowledge Graph from flat complaint records in HANA Cloud.    
 - Queried the graph with SPARQL to explore linked data and apply filters.  
 - Introduced product and issue hierarchies for roll-up queries.  
 - Validated our data with SHACL to catch missing or inconsistent information.  
+- Visualized the graph to see how complaints, companies, products, issues, and consumers are connected. (optional)
 
 Together, these steps showed how Knowledge Graphs bring relationships, hierarchies, and quality checks into analysis, things that are hard to achieve with plain SQL.
 
