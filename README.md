@@ -37,7 +37,7 @@ The [Getting Started - Prepare your working environment and tools](exercises/ex0
     - [3.3 Add Product and Issue Hierarchies](exercises/ex3#Exercise-3.3-Add-Product-and-Issue-Hierarchies)
     - [3.4 Querying with Hierarchies](exercises/ex3#Exercise-3.4-Querying-with-Hierarchies)
     - [3.5 Validate the Knowledge Graph with SHACL](exercises/ex3#Exercise-3.5-Validate-the-Knowledge-Graph-with-SHACL)
-    - [3.6 Visualize the Knowledge Graph](exercises/ex3#Exercise-3.6-Visualize-the-Knowledge-Graph)
+    - [3.6 Visualize the Knowledge Graph](exercises/ex3#Exercise-3.6-Visualize-the-Knowledge-Graph - (optional))
 
 <br>
 
