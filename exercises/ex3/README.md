@@ -139,6 +139,8 @@ We will use `SPARQL_TABLE` to query the graph directly from SQL.
    ```
   This will return a tabular view of sample complaints and their linked entities.
 
+  ![](/exercises/ex3/images/QueryResult.png)
+
 1. **Filter complaints with a specific outcome**
 
    For example, to see all complaints that were Closed with monetary relief, run:
