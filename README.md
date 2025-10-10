@@ -33,11 +33,11 @@ The [Getting Started - Prepare your working environment and tools](exercises/ex0
     - [2.4 Predicting company monetary relief from consumer complaints using AutoML classification models ](exercises/ex2#Exercise-2.4---Predicting-company-monetary-relief-from-consumer-complaints-using-AutoML-classification-models)
 - [Exercise 3 - Analyse Consumer Complaints Data using Knowledge Graphs](exercises/ex3/)
     - [3.1 Create the Knowledge Graph](exercises/ex3#Exercise-3.1-Create-the-Knowledge-Graph)
-    - [3.2 Visualize the Knowledge Graph](exercises/ex3#Exercise-3.2-Visualize-the-Knowledge-Graph)
-    - [3.3 Query the Knowledge Graph](exercises/ex3#Exercise-3.3-Query-the-Knowledge-Graph)
-    - [3.4 Add Product and Issue Hierarchies](exercises/ex3#Exercise-3.4-Add-Product-and-Issue-Hierarchies)
-    - [3.5 Querying with Hierarchies](exercises/ex3#Exercise-3.5-Querying-with-Hierarchies)
-    - [3.6 Validate the Knowledge Graph with SHACL](exercises/ex3#Exercise-3.6-Validate-the-Knowledge-Graph-with-SHACL)
+    - [3.2 Query the Knowledge Graph](exercises/ex3#Exercise-3.2-Query-the-Knowledge-Graph)
+    - [3.3 Add Product and Issue Hierarchies](exercises/ex3#Exercise-3.3-Add-Product-and-Issue-Hierarchies)
+    - [3.4 Querying with Hierarchies](exercises/ex3#Exercise-3.4-Querying-with-Hierarchies)
+    - [3.5 Validate the Knowledge Graph with SHACL](exercises/ex3#Exercise-3.5-Validate-the-Knowledge-Graph-with-SHACL)
+    - [3.6 Visualize the Knowledge Graph (optional)](exercises/ex3#Exercise-3.6-Visualize-the-Knowledge-Graph-(optional))
 
 <br>
 
