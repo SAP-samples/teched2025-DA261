@@ -108,7 +108,7 @@ In __step 6__ you will learn how to apply __dimension reduction of vector column
 <br><br>
 
 ### Step 7: Build the AutoML classification model predicting company's monetary relief response to consumers
-In __step 6__ you will learn how to apply __dimension reduction of vector columns__ using __Principal Component Analysis (PCA)__
+In __step 7__ you will learn how to use the __AutoML functions__ from the Predictive Analysis Library to automatically probe various algorithms and parameters to build the best possible classification model.
 - __sample a hold-out set__ from the training data for later model performance evaluation
   ![](/exercises/ex2/images/ex2.4_S7_holdout.png)
 - __define__ the __AutoML classification scenario__ and its __configuration__ for finding a best possible model
