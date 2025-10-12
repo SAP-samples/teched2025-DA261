@@ -43,9 +43,9 @@ and then execute the notebook cells
 
 ### Keep the overview
 Once the notebook file is opened,
-- you can open the  by clicking __Outline__ in the header of the notebook, 
-- the notebook __outline-view__ the opens to the left, and is helpful for oversight and navigation through the content of the notebook. 
-- You can arrange size of outline-view to your needs.
+- you can open the __Outline-View__ by clicking __Outline__ in the header of the notebook, 
+- the notebook __Outline-View__ then opens to the left, and is helpful for oversight and navigation through the content of the notebook-file 
+- You can arrange the size of outline-view to your needs.
 <br>![](/exercises/ex2/images/nbk_outline.png)
 
 <br><br>
@@ -82,10 +82,10 @@ In __step 2__ you will learn to apply hana-ml dataframe methods
 ## Exercise 2.2  Analyze consumer sentiment using text analysis (optional)
 This exercise is meant to be an OPTIONAL add-on exercise, to only pursue based on interest and focus. If you continue with exercise 2.2, you likely not be able to complete other exercises in time of the session.
 ### Step 3: Explore sentiment of consumer complaints (optional)
-In __step 3__ you will explore __sentiment__ in the text narratives of the complaints
-- execution __text analysis__ for sentiment, on __document-level__
+In __step 3__ you will explore to detect the __sentiment__ from the text narratives of the complaints
+- executing __text analysis__ for sentiment, on the __document-level__
   ![](/exercises/ex2/images/ex2.2_S3_complaints_sentiment.png)
-- as well as __sentence-level__ complaint sentiment details
+- as well as detecting the user complaint sentiment on the __sentence-level__ of the complaint text.
   ![](/exercises/ex2/images/ex2.2_S3_complaints_sentiment_sentence.png)
 
 <br><br>
@@ -93,10 +93,10 @@ In __step 3__ you will explore __sentiment__ in the text narratives of the compl
 ## Exercise 2.3 Search in consumer complaints narratives using similarity search (optional)
 This exercise is meant to be an OPTIONAL add-on exercise, to only pursue based on interest and focus. If you continue with exercise 2.3, you likely not be able to complete other exercises in time of the session.
 ### Step 4: Explore consumer complaints narratives using Text Embeddings and similarity search (optional)
-In __step 4__ you will explore how to generated text embeddings within SAP HANA Cloud and apply similarity searches
+In __step 4__ you will explore how to generate text embeddings within SAP HANA Cloud and apply similarity searches, and
 - __create text embeddings__ from complaints text examples using the __vector_embedding SQL function__ 
   ![](/exercises/ex2/images/ex2.3_S4_hdf_embeddings.png)
-- apply __similarity search__ against vector columns with text embeddings and how to embed different language query sentences
+- apply HANA dataframe __similarity search-methods__ against vector columns with text embeddings and how to embed different language query sentences
 <br>![](/exercises/ex2/images/ex2.3_S4_simsearch.png)
 
 <br><br>
@@ -105,16 +105,16 @@ In __step 4__ you will explore how to generated text embeddings within SAP HANA 
 
 
 ### Step 5: Data selection and preparation 
-In __step 5__ you will explore and prepare the HANA dataframe, which shall be used later to build the AutoML classification model
-- use dataframe methods to identify companies with high percentage of complaints addressed by monetary relief
+In __step 5__ you will explore and prepare the HANA dataframe, which shall be used later to build the AutoML classification model, and
+- use dataframe methods to identify and filter for companies with a high percentage of complaints which had been addressed by a monetary relief response,
   ![](/exercises/ex2/images/ex2.4_S5_hdf_monetary.png)
-- Apply filter, column renaming, value reformatting and more methods to prepare the data 
+- apply filter, column renaming, value reformatting and more methods to prepare the data 
 
 
 <br><br>
 
 ### Step 6: Consumer complaints Text Embedding vector dimension reduction
-In __step 6__ you will learn how to apply __dimension reduction of vector columns__ using __Principal Component Analysis (PCA)__
+In __step 6__ you will learn how to apply __dimension reduction to text embedding vector columns__ using __Principal Component Analysis (PCA)__
 - and apply __Vector-PCA__ to reduce the text embedding from 768 dimensions to a principal component vector of 64 dimensions
   ![](/exercises/ex2/images/ex2.4_S6_vecpca.png)
 
@@ -128,9 +128,9 @@ In __step 7__ you will learn how to use the __AutoML functions__ from the Predic
   ![](/exercises/ex2/images/ex2.4_S7_automl.png)
 - __observe__ the __AutoML execution__ using the __AutoML monitoring__ viewer
   ![](/exercises/ex2/images/ex2.4_S7_automl_monitor.png)
-- __inspect__ the __best found AutoML classification pipeline model__ using the __score()-method__ and the __hold-out sample__
+- __evaluate__ the __best found AutoML classification pipeline model__ using the __score()-method__ applied to the __hold-out sample__
  ![](/exercises/ex2/images/ex2.4_S7_automl_scorestats.png)
-- apply the __best found AutoML classification pipeline model__ for classification __predictions__ on complaint data. 
+- apply the __best found AutoML classification pipeline model__ for classification predictions on new complaints data using the __predict()-method__. 
  ![](/exercises/ex2/images/ex2.4_S7_automl_predictions.png)
 
 <br><br>
@@ -149,4 +149,4 @@ Continue to - [Exercise 3 - Analyse Consumer Complaints Data using Knowledge Gra
 <br><br>
 
 ## Further reference information and examples 
-Note the appendix section of the ex1_notebook.ipynb-file might include additional expert-level details for your offline study, incl. reference to the data used in the exercise.
+Note the appendix section of the ex2_notebook.ipynb-file might include additional expert-level details for your offline study, incl. reference to the data used in the exercise.

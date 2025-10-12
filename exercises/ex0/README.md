@@ -7,7 +7,7 @@ In this SAP TechEd 2025 Hands-on Workshop __Unlocking AI-driven insights from yo
 <br><br>
 ### You will work with the following technical environment
 - a centrally provided __SAP HANA Cloud database system__ 
-  - with your personal user-id and schema, with full access to the objects in their own schema
+  - with your personal user-id and schema, with full access to the objects in your database user schema
   - shared data provided within a separate, read-only, schema __DA261_SHARE__
 - a __SQL console__ and database tools within a provided __SAP HANA Cloud Database Explorer__ instance (referred to as __DBX__),
   - _The SAP HANA Cloud database explorer is a web-based tool for browsing and working with SAP HANA database objects such as tables, views, functions, stored procedures. In addition, DBX can be used to import and export data, execute SQL statements, create remote sources, work with multi-model data such as graph, spatial and JSON collections, view trace files, and any other SQL activity._
@@ -46,7 +46,7 @@ The technical requirements to complete the exercises in this repository, includi
 
 <br>
 
-- In the __Sign In__ step, __enter__ the __UserId__ and __password__ provided the workshop speaker and __according to your desk-id__
+- In the next __Sign In__ step, __enter__ the __UserId__ and __password__ provided to you by the workshop instructor and __according to your desk-id__
   - User ID: \<as provided, example __AC######U##__\>
   - Password: \<as provided\> 
   - Then select __Continue__.
@@ -82,15 +82,16 @@ Now, once the login to SAP HANA Database Explorer application was successful
 
 ## Step 2 - Configuring your Python environment in SAP Business Application Studio
 
-### Machine Learning model development to application integration workflow
-1. Data for ML model development is accessed from Python Jupyter Notebook envrionment in SAP HANA Cloud 
-2. Python machine learning client package (hana-ml) is used for ML model experiments and development
-3. SQL-script HANA deployment infrastructure (HDI) and CAP design-time artifacts are generated from hana-ml and integrated into the BAS application project
-
+### Understanding the handshake between the Machine Learning model development and the application development workflow
+1. The Python environment in SAP Business Application Studio is used for ML model development, data for ML model development is accessed in Python Jupyter Notebook envrionment from SAP HANA Cloud 
+2. The used Python machine learning client package (hana-ml) is used for ML model experiments and development
+3. The hana-ml Python package provides methods for dedicated design-time artifact generation for targeted algorithm and the use case explored, artifcats generated include SQL-script HANA deployment infrastructure (HDI)- and CAP design-time artifacts. 
+4. The handshake step is now, once the ML experimentation and model development is completed, to generate the design-time artifacts based on final algorihtm choice and configurations. The Application developer can include those artifacts directly into an development project in SAP Business Application Studio.
+   
 ***
 
 ### 2.1 Creating the SAP Business Application Studio DEV Space
-This exercise uses the Jupyter Notebooks extension in SAP Business Application Studio (BAS). This enables the use of python coding to leverage large language models in addition to the SAP HANA Cloud vector engine.
+This exercise uses the Jupyter Notebooks extension in SAP Business Application Studio (BAS). This enables the use of python coding to leverage the hana-ml and other packages, to script in Python like with any other Machine Learning python package, but experiment and execute in SAP HANA Cloud.
 
 1. Select to open Business Application Studio to get started.<br>
    BAS [link](https://sap-build-hana-cloud.eu10cf.applicationstudio.cloud.sap/index.html)
@@ -105,21 +106,21 @@ This exercise uses the Jupyter Notebooks extension in SAP Business Application S
 4. Choose the following for creating your dev space, 
       - __Dev space name__:  __DA261_AC207556U##__ 
         [replace ## with index of your assgined user id] 
-      - select for __application type__ on the left __SAP HANA Native Application__ as the . 
+      - select for __application type__ on the left __SAP HANA Native Application__  
       - select from __Additional SAP Extensions__ on the right hand side the __Python Tools__
       - and then select __Create Dev Space__ to start the process. This will create a dedicated development environment with all the tools required to run the Python Jupyter Notebooks.
 <br>![](./images/BAS_create_dev_space.png)
 
-1. It will take a few minutes for the Dev Space to start up. The status can be seen beside the name.
+5. It will take a few minutes for the Dev Space to start up. The status can be seen beside the name.
 <br>![](./images/BAS_devspace_start.png)
 
-1. Once the status changes to Running, select the name (__DA261_AC207556U##__) to open it.
+6. Once the status changes to __Running__, __click on your dev space name__ (__DA261_AC207556U##__) to open it.
 <br>![](./images/BAS_devspace_running_open.png)
 
 <br><br>
 
 ### 2.2 Cloning the DA261 repository project
-The following steps are to setup the required notebook.
+The following steps complete the configuration of the Jupyter Notebook- and Python environment in SAP Business Application Studio.
 
 1.  On the Get Started page in Business Application Studio, select the option Clone from Git to import a repository from Github.
 <br>![](./images/BAS_clone_from_github.png)
@@ -141,13 +142,13 @@ The following steps are to setup the required notebook.
 <br><br>
 
 ### 2.3 Configure the python runtime
-The prepared python runtime and tools, as part of the Business Application Studio dev-space, requires some additional refinement regarding python package installations and connection to the SAP HANA Cloud database from Python.  
+The prepared python runtime and tools, as part of the Business Application Studio dev-space, require some additional refinement regarding python package installation and connection to the SAP HANA Cloud database from Python.  
 
 Pursue the following steps
 1. Select the Jupyter Notebook __/exercises/ex0/ex0_1_python_setup.ipynb__ to __open__ it from the project explorer tree.
 <br>![](./images/BAS_python_setup_jnb.png)  
 
-2. The notebook, with executable code cells, will be displayed on the screen.
+2. The notebook, with executable python code cells, will be displayed on the screen.
    <br>![](./images/BAS_open_jnb.png)
 
 3. Scroll down to the notebook script cell with the __!pip install ... commands__ 
@@ -157,7 +158,7 @@ Pursue the following steps
    <br>![](./images/BAS_python_pipinst1.png)
 
 
-4. When the first cell is executed, you will be __prompted__ asking to __choose a python kernel__ 
+4. When the first cell is triggered to be executed, you will be __prompted__ asking to __choose a python kernel__ 
    - Select __Python Environments....__
    <br>![](./images/BAS_python_select_env.png)
 
@@ -166,7 +167,7 @@ Pursue the following steps
    <br>![](./images/BAS_python_select_env_3131.png)
 
 6. The __required libraries__ will now __start installing__
-   - This could take a few minutes to complete
+   - This could take about ~30 seconds to a 1 minute to complete
    - Some messages about port numbers will also be visible in the lower right corner, which can be ignored and closed. 
    <br>![](./images/BAS_python_install_env_log.png)
 
@@ -190,7 +191,7 @@ For our convenience, we will prepare the database connection credentials within 
 
 Pursue the following steps
 
-1. Create a copy of the [./ex0/temp_user.ini](ex0/temp_user.ini) file and rename it to [./ex0/user.ini](ex0/user.ini) 
+1. Create a copy of the [./ex0/temp_user.ini](ex0/temp_user.ini) file in the same folder and rename it to [./ex0/user.ini](ex0/user.ini) 
    - copy the file
 <br>![](./images/BAS_python_copy_tmpuserini.png)
    - paste the file

@@ -38,9 +38,9 @@ and then execute the notebook cells
 
 ### Keep the overview
 Once the notebook file is opened,
-- you can open the  by clicking __Outline__ in the header of the notebook, 
-- the notebook __outline-view__ the opens to the left, and is helpful for oversight and navigation through the content of the notebook. 
-- You can arrange size of outline-view to your needs.
+- you can open the __Outline-View__ by clicking __Outline__ in the header of the notebook, 
+- the notebook __Outline-View__ then opens to the left, and is helpful for oversight and navigation through the content of the notebook-file 
+- You can arrange the size of outline-view to your needs.
 <br>![](/exercises/ex1/images/nbk_outline.png)
 
 
@@ -65,7 +65,7 @@ Note, this README-file and the following explanations here are meant only to pro
 ### Step 1: Create HANA dataframe for the financial business transaction sample table
 In __Step 1__ of this exercise, 
 - you will learn how to create a HANA dataframe
-- how to use methods to understand the data structure of the result set underlying the dataframe select query
+- how to use methods to understand the data structure of the result set and its underlying SQL query statement
 - understand when data is moved from HANA into the python environment
 
 ![](/exercises/ex1/images/ex1.1-S1-dataframe.png)  
@@ -88,20 +88,20 @@ In __Step 2__ of this exercise,
 ## Exercise 1.2 Outlier analysis using Isolation Forests
 ### Step 3: Execute basic outlier analysis using Isolation Forest
 In __Step 3__ of this exercise,  
-- you will learn how to perform and outlier analysis using the Isolation Forest-method from the Predictive Analysis Library (PAL)
+- you will learn how to execute an outlier analysis using the Isolation Forest-method from the Predictive Analysis Library (PAL)
   ![](/exercises/ex1/images/ex1.2-S3-if.png)
 - review the outlier analysis results in tables and graphics  
   ![](/exercises/ex1/images/ex1.2-S3-if-res-tab.png)
   ![](/exercises/ex1/images/ex1.2-S3-if-res-plot.png)
-- and have learned how to inspect the generated and executed SQL code statements
+- and have learned how to inspect the generated and executed SQL statements
   ![](/exercises/ex1/images/ex1.2-S3-if-SQL.png)
 
 ### Step 4: Add shapley explanations to Isolation Forest outlier predictions
 In __Step 4__ of this exercise,  
-- you will learn how to apply SHAPley Additive Explanation with the outlier predictions, thus being able to provide insights with the predictions, on why a datapoint has been classified as outlier by the model 
+- you will learn how to apply __AI explainability__ using __SHAPley Additive Explanations__ with the outlier predictions, thus being able to provide transparency with the outlier predictions, on why a datapoint has been classified as an outlier by the isolation forest model 
   ![](/exercises/ex1/images/ex1.2-S4-if_shap.png)
 
-- will have generated SHAPley explainer summary plots, illustrating features relative impact on outlier classification at overall model's level
+- will have generated AI explainability __summary plots__ SHAPley explainer , illustrating each features relative impact within the overall isolation forest outlier detection model.
   ![](/exercises/ex1/images/ex1.2-S4-if_shap_summary.png)
 
 
