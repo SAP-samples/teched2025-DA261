@@ -2,7 +2,18 @@
 SAP TechEd 2025, Hands-On Workshop: DA261 - Unlocking AI-driven insights from your business data in SAP HANA Cloud
 
 ## Understand exercise 2 scenario
-In this exercise, you will explore how to classify and process consumer complaints texts using text analysis for sentiment detection, similarity search with text embeddings and AutoML techniques to build a consumer complaints classification machine learning model, unlocking the semantic understanding of text data as text embedding feature with machine learning models.
+In this exercise, you will analyze consumer complaints data using text embeddings and machine learning models
+- 1) explore the financial consumer complaints data and text narratives using SAP HANA dataframes, preparing and selecting the data to be analyzed in detail
+- 4) AutoML techniques to build a consumer complaints classification machine learning model predicting cases for Monetary-Relief, unlocking the semantic understanding of text data as text embedding feature with machine learning models
+
+Optionally and if time permits, you may explore
+- 2) how to apply text analysis models to the original consumer complaints text narratives in order to detect and classify the consumer's sentiment 
+- 3) how to apply vector engine similarity search-queries within the consumer complaints text embeddings data  
+  
+<br>
+
+![](/exercises/ex2/images/ex2_scenario.png)
+
 <br><br>
 
 ## Getting started | How to Guide
@@ -40,6 +51,8 @@ Once the notebook file is opened,
 <br><br>
 
 ## Exercise 2.0 Connect to your SAP HANA Cloud instance
+Note, this README-file and the following explanations here are meant only to provide an overview about the tasks, the actual detailed practical instructions are provided in the notebook file [__ex2_notebook.ipynb__](/exercises/ex2/ex2_notebook.ipynb)
+
 ### Step 0: Establish and check connection
 - Execute the cells
 <br>![](/exercises/ex2/images/ex2.0_S0_connect.png)

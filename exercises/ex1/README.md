@@ -3,6 +3,13 @@ SAP TechEd 2025, Hands-On Workshop: DA261 - Unlocking AI-driven insights from yo
 
 ## Understand exercise 1 scenario
 In this exercise, you will explore how to apply machine learning techniques like Isolation Forest to financial transaction data for Outlier Analysis.
+1. You will explore on how to work with SAP HANA dataframes in Python for data exploration, preparation and filtering to a sclide of financial booking transactions to be analysed
+2. You will apply the Isolation Forest algorithm to predict outliers from the data slice analyzed, visualize outlier points and use AI explainability methods to gain transparancy on why the model predicted a transaction row to be an outlier
+3. Apply the outlier analysis in parallel on each "G/L Account" data slice using massive data-parallel processing
+<br>
+
+![](/exercises/ex1/images/ex1_scenario.png)
+
 <br><br>
 
 ## Getting started | How to Guide
@@ -40,6 +47,8 @@ Once the notebook file is opened,
 <br><br>
 
 ## Exercise 1.0 - Connect to your SAP HANA Cloud instance
+Note, this README-file and the following explanations here are meant only to provide an overview about the tasks, the actual detailed practical instructions are provided in the notebook file [__ex1_notebook.ipynb__](/exercises/ex1/ex1_notebook.ipynb)
+
 ### Step 0: Establish and check connection
 - As the initial step you will execute the python cells in the notebook-file to establish the SAP HANA Cloud database connection.
 <br>![](/exercises/ex1/images/0-start.png)
