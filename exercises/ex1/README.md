@@ -44,6 +44,9 @@ Once the notebook file is opened,
 <br>![](/exercises/ex1/images/nbk_outline.png)
 
 
+### Reference to exercise solutions
+An exercise solution notebook is provided in __../ex_solutions/ex1_notebook-SOLUTION.ipynb__ and can be opened from the project explorer
+
 <br><br>
 
 ## Exercise 1.0 - Connect to your SAP HANA Cloud instance

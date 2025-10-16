@@ -48,6 +48,9 @@ Once the notebook file is opened,
 - You can arrange the size of outline-view to your needs.
 <br>![](/exercises/ex2/images/nbk_outline.png)
 
+### Reference to exercise solutions
+An exercise solution notebook is provided in __../ex_solutions/ex2_notebook-SOLUTION.ipynb__ and can be opened from the project explorer
+
 <br><br>
 
 ## Exercise 2.0 Connect to your SAP HANA Cloud instance
