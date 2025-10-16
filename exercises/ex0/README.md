@@ -93,9 +93,9 @@ Now, once the login to SAP HANA Database Explorer application was successful
 ### 2.1 Creating the SAP Business Application Studio DEV Space
 This exercise uses the Jupyter Notebooks extension in SAP Business Application Studio (BAS). This enables the use of python coding to leverage the hana-ml and other packages, to script in Python like with any other Machine Learning python package, but experiment and execute in SAP HANA Cloud.
 
-1. Select to open Business Application Studio to get started.<br>
+1. Select to open Business Application Studio (BAS) to get started.<br>
    BAS [link](https://sap-build-hana-cloud.eu10cf.applicationstudio.cloud.sap/index.html)
-   link text https://sap-build-hana-cloud.eu10cf.applicationstudio.cloud.sap/index.html
+   (https://sap-build-hana-cloud.eu10cf.applicationstudio.cloud.sap/index.html)
 
 2. Enter the same UserId and password provided by the workshop speaker before and according to your desk-id
      - User ID: \<as provided, example AC######U##\>
