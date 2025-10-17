@@ -1,6 +1,6 @@
 # Exercise 3 - Analyse Consumer Complaints Data using Knowledge Graphs
 
-In this exercise, we will use **SAP HANA Cloud Knowledge Graph** to build a semantic layer on top of the Consumer Complaints dataset.
+In this exercise, we will use **SAP HANA Cloud Knowledge Graph Engine** to build a semantic layer on top of the Consumer Complaints dataset.
 
 The exercise shows how to:
 * Create a Knowledge Graph directly from relational complaint data stored in HANA Cloud.
@@ -10,7 +10,7 @@ The exercise shows how to:
 * Visualize the resulting Knowledge Graph using the **SAP HANA Cloud Central tool** (optional).
 
 
-This provides a more semantic and hierarchical view of the data, allowing you to analyse consumer complaints with **hierarchies, relationships, and reasoning**.
+The above steps will provide a more semantic and hierarchical view of the data, allowing you to analyse consumer complaints with **hierarchies, relationships, and reasoning**.
 
 ## Exercise 3.1 Create the Knowledge Graph
 
@@ -21,9 +21,9 @@ After completing these steps you will have created a Knowledge Graph from the Co
 (https://hana-cockpit-004.cfapps.eu10.hana.ondemand.com/hrtt/sap/hana/cst/catalog/cockpit-index.html?databaseid=C3683523)
 
 
-2. Run the following SQL query to create triples from your consumer complaints table:
-   - **Adjust the Graph instance name __<consumerComplaintsBase_U##>__ to match the index of your assgined user id**
-   **[replace ## with index of your assgined user id]**
+2. Run the following SQL query to create triples from your consumer complaints table (refer to [SPARQL_EXECUTE built-in procedure](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sparql-reference-guide/sparql-execute-stored-procedure?locale=en-US&version=LATEST)):
+   - **Adjust the Graph instance name __<consumerComplaintsBase_U##>__ to match the index of your assigned user id**
+   **[replace ## with index of your assigned user id]**
         
 ```sql
 CALL SPARQL_EXECUTE('
@@ -96,22 +96,24 @@ The above command transformed rows in the **CONSUMER_COMPLAINTS** table into a *
 * **Consumer** – information about the consumer (state, ZIP, tags, consent) is stored as a `cc:Consumer` node.
 * **Relationships** – links like `cc:hasConsumer`, `cc:isRelatedTo`, `cc:associatedIssue` turn the flat table into a connected graph.
 
+![](/exercises/ex3/images/CreatedKG.png) 
+
 In short:
 - A single row in the table now becomes a web of connected entities.
 - Each entity has its own URI (unique identifier).
 - Complaints are no longer just records, now, they are central nodes connected to companies, products, issues, outcomes, and consumers.
 
-This structure enables you to run **SPARQL queries** to explore relationships and hierarchies that would be very hard to capture with plain SQL.
+This structure enables you to run **SPARQL queries** to explore relationships and hierarchies that would be very hard to capture with standard SQL.
 
 ## Exercise 3.2 Query the Knowledge Graph
 
 Now that we have created the Knowledge Graph, let’s run some SPARQL queries against it.  
-We will use `SPARQL_TABLE` to query the graph directly from SQL.
+We will use `SPARQL_TABLE` to query the graph directly from SQL.(refer to [SPARQL_TABLE function](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sparql-reference-guide/sparql-table-function?locale=en-US&version=LATEST))
 
 1. **Check contents of the Knowledge Graph**
 
    Run the following query to fetch a few complaints with their associated company, product, issue, and outcome:
-   - **Note, adjust the Graph instance reference in the query __<consumerComplaintsBase_U##>__ to match the index of your assgined user id before execution**
+   - **Note, adjust the Graph instance reference in the query __<consumerComplaintsBase_U##>__ to match the index of your assigned user id before execution**
 
    ```sql
    SELECT *
@@ -144,7 +146,7 @@ We will use `SPARQL_TABLE` to query the graph directly from SQL.
 1. **Filter complaints with a specific outcome**
 
    For example, to see all complaints that were Closed with monetary relief, run:
-      - note, adjust the Graph instance reference in the query __<consumerComplaintsBase_U##>__ to match the index of your assgined user id before execution
+      - note, adjust the Graph instance reference in the query __<consumerComplaintsBase_U##>__ to match the index of your assigned user id before execution
 
    ```sql
    SELECT *
@@ -191,7 +193,7 @@ By introducing **hierarchies**, we can group these granular values into broader,
 This makes queries:
 - **Simpler** : you can ask *“How many complaints relate to Credit Cards?”* without listing every sub-product.
 - **More powerful** : SPARQL can use `rdfs:subClassOf*` to traverse the hierarchy, automatically rolling up details to categories.
-- **Beyond SQL** : SQL would require **lookup tables, recursive joins, or complex CASE statements** to achieve the same grouping. With Knowledge Graphs, the relationships are **modeled once** and queries automatically respect the hierarchy.
+- **Beyond SQL** : SQL would require **lookup tables, recursive joins, or complex CASE statements** to achieve the same grouping. With Knowledge Graphs, the relationships are **modeled once** and hierarchical relationships are inherently handled during query execution.
 
 ### Why not just use SQL?
 
@@ -209,14 +211,14 @@ HANA already supports property graphs and SQL hierarchies, but Knowledge Graphs 
 - **Standards based** : RDF + SPARQL are W3C standards, portable across tools and easier to integrate with external ontologies.  
 - **Semantic reasoning** : hierarchies are built once and reused with `rdfs:subClassOf*`, no need for recursive joins or CASE logic.  
 - **Multiple hierarchies** : you can model product, issue, geography, and others together and traverse them in one query.  
-- **Reusable & future proof** : once modeled, all queries benefit; also connects easily to AI/ML tools expecting RDF.  
+- **Reusable & future proof** : once the model is defined, all queries can leverage it. The data can also be seamlessly integrated into AI/ML applications, including GenAI and RAG scenarios, that expect RDF inputs.
 
 In short, property graphs and SQL hierarchies work, but Knowledge Graphs provide reusability, flexibility, and semantic power, meaning you model knowledge once and then query it at different levels of detail without rewriting logic, making analysis simpler, reusable, and more powerful.
 
 ### Now let's start with creating Product Hierarchy knowledge graph
 
 The following code inserts hierarchy triples mapping each product to a broader product category.
-- note, adjust the Hierachy name in the query __<consumerComplaintsProductHierarchy_U##>__ to match the index of your assgined user id before execution
+- note, adjust the Hierachy name in the query __<consumerComplaintsProductHierarchy_U##>__ to match the index of your assigned user id before execution
 
 ```sql
 /* Insert product hierarchy triples, with
@@ -260,7 +262,7 @@ WHERE {
 ### Now next, let's create Issue Hierarchy knowledge graph
 
 The following code inserts hierarchy triples mapping each issue to a broader issue category.
-- note, adjust the Hierachy name in the query __<consumerComplaintsIssueHierarchy_U##>__ to match the index of your assgined user id before execution
+- note, adjust the Hierachy name in the query __<consumerComplaintsIssueHierarchy_U##>__ to match the index of your assigned user id before execution
 
 ```sql
 CALL SPARQL_EXECUTE('
@@ -309,7 +311,7 @@ WHERE {
 - Created two new hierarchy graphs: **`consumerComplaintsProductHierarchy`** and **`consumerComplaintsIssueHierarchy`**.  
 - Mapped granular product names (e.g., *“Credit card”*, *“Checking account”*) to broader categories like **Credit Cards** or **Bank Accounts**.  
 - Mapped granular issue names (e.g., *“Account status incorrect”*, *“Late fee”*) to broader categories like **Account Servicing** or **Billing & Payment**.  
-- Built a classification model where SPARQL can automatically roll up details to higher categories using `rdfs:subClassOf*`.  
+- Built a hierarchical knowledge graph model where SPARQL can automatically roll up details to higher categories using `rdfs:subClassOf*`.  
 
 ## Exercise 3.4 Querying with Hierarchies
 
@@ -317,7 +319,7 @@ With the Product and Issue hierarchies in place, we can now run more powerful SP
 This is where the Knowledge Graph approach clearly outshines flat SQL.
 
 1. **Complaints mentioning “credit card” - grouped by Product Category**
-- note, adjust the Grpah instance name __<consumerComplaintsBase_U##>__ and Hierachy name __<consumerComplaintsProductHierarchy_U##>__ in the query  to match the index of your assgined user id before execution
+- note, adjust the Grpah instance name __<consumerComplaintsBase_U##>__ and Hierachy name __<consumerComplaintsProductHierarchy_U##>__ in the query  to match the index of your assigned user id before execution
 - 
    ```sql
    SELECT * FROM SPARQL_TABLE('
@@ -346,7 +348,7 @@ This is where the Knowledge Graph approach clearly outshines flat SQL.
 2. **Credit card complaints - by ProductCategory × IssueCategory × Company × Outcome × State**
   
    This query shows how multiple hierarchies and attributes can be combined in one SPARQL query.
-- note, adjust the Grpah instance name __<consumerComplaintsBase_U##>__ and Hierachy name __<consumerComplaintsProductHierarchy_U##>__ , __<consumerComplaintsIssueHierarchy_U##>__ in the query  to match the index of your assgined user id before execution
+- note, adjust the Grpah instance name __<consumerComplaintsBase_U##>__ and Hierachy name __<consumerComplaintsProductHierarchy_U##>__ , __<consumerComplaintsIssueHierarchy_U##>__ in the query  to match the index of your assigned user id before execution
    ```sql
    SELECT * FROM SPARQL_TABLE('
    PREFIX cc:<http://consumer.demo.com/complaints#>
@@ -384,7 +386,7 @@ This is where the Knowledge Graph approach clearly outshines flat SQL.
    ```
 
 3. **Top Issue Categories by State**
-- note, adjust the Grpah instance name __<consumerComplaintsBase_U##>__ and Hierachy name  __<consumerComplaintsIssueHierarchy_U##>__ in the query  to match the index of your assgined user id before execution
+- note, adjust the Grpah instance name __<consumerComplaintsBase_U##>__ and Hierachy name  __<consumerComplaintsIssueHierarchy_U##>__ in the query  to match the index of your assigned user id before execution
    ```sql
    SELECT * FROM SPARQL_TABLE('
    PREFIX cc:<http://consumer.demo.com/complaints#>
