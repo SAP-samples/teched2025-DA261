@@ -9,8 +9,22 @@ The exercise shows how to:
 * Run **SPARQL queries** on the Knowledge Graph to perform advanced analysis that goes beyond flat SQL queries.
 * Visualize the resulting Knowledge Graph using the **SAP HANA Cloud Central tool** (optional).
 
-
 The above steps will provide a more semantic and hierarchical view of the data, allowing you to analyse consumer complaints with **hierarchies, relationships, and reasoning**.
+
+### Understanding Key Terms
+
+Before we start building the Knowledge Graph, here are a few key concepts used throughout this exercise:
+
+- **[Knowledge Graph Engine](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-graph-reference-guide/knowledge-graph-overview?locale=en-US&version=LATEST)** – the SAP HANA Cloud component that stores and queries RDF-based data using SPARQL.
+- **[Knowledge Graph](https://www.w3.org/TR/rdf11-concepts/)** – a collection of facts represented as subject–predicate–object triples that describe how data entities are related.
+- **[RDF (Resource Description Framework)](https://www.w3.org/TR/rdf11-concepts/)** – the W3C standard format for representing information as triples.
+- **Triple** – a single statement of knowledge in the form *subject → predicate → object* (for example: *Complaint 123 → handledBy → Bank A*).
+- **[SPARQL](https://www.w3.org/TR/sparql11-query/)** – the query language for Knowledge Graphs, similar to SQL but designed to traverse relationships and hierarchies.
+- **Node** – an entity in the graph (such as Complaint, Company, Product, Issue, or Consumer).
+- **Edge / Predicate** – the link or relationship between two nodes (for example, `cc:handledBy`, `cc:isRelatedTo`).
+- **Web of connected entities** – refers to the network of nodes and relationships that form once relational rows are converted into triples.
+
+These definitions provide context for the terms you’ll encounter in the next steps.
 
 ## Exercise 3.1 Create the Knowledge Graph
 
