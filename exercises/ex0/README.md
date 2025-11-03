@@ -26,8 +26,9 @@ The technical requirements to complete the exercises in this repository, includi
 
 ### Logging into Database Explorer (DBX)
 - __Open__ the SAP HANA Database Explorer __URL__  
-   - Database Explorer [link](https://hana-cockpit-004.cfapps.eu10.hana.ondemand.com/hrtt/sap/hana/cst/catalog/cockpit-index.html?databaseid=C3683523)  
-(https://hana-cockpit-004.cfapps.eu10.hana.ondemand.com/hrtt/sap/hana/cst/catalog/cockpit-index.html?databaseid=C3683523)
+   - SAP TechEd Berlin DBX: [https://hana-cockpit-004.cfapps.eu10.hana.ondemand.com/hrtt/sap/hana/cst/catalog/cockpit-index.html?databaseid=C3683523](https://hana-cockpit-004.cfapps.eu10.hana.ondemand.com/hrtt/sap/hana/cst/catalog/cockpit-index.html?databaseid=C3683523)
+  - ASUG Tech Connect Louisville DBX [https://hana-cloud-academy-us10.hana-tooling.ingress.orchestration.prod-us10.hanacloud.ondemand.com/hrtt/sap/hana/cst/catalog/cockpit-index.html?databaseid=C305434](https://hana-cloud-academy-us10.hana-tooling.ingress.orchestration.prod-us10.hanacloud.ondemand.com/hrtt/sap/hana/cst/catalog/cockpit-index.html?databaseid=C305434)
+  - SAP TechEd on Tour Bangalore [DBX-link]
 
 - Select __Sign in to another account__
 <br>  ![](./images/DBX_BTP_sign-in.png)
@@ -94,8 +95,9 @@ Now, once the login to SAP HANA Database Explorer application was successful
 This exercise uses the Jupyter Notebooks extension in SAP Business Application Studio (BAS). This enables the use of python coding to leverage the hana-ml and other packages, to script in Python like with any other Machine Learning python package, but experiment and execute in SAP HANA Cloud.
 
 1. Select to open Business Application Studio (BAS) to get started.<br>
-   BAS [link](https://sap-build-hana-cloud.eu10cf.applicationstudio.cloud.sap/index.html)
-   (https://sap-build-hana-cloud.eu10cf.applicationstudio.cloud.sap/index.html)
+   - SAP TechEd Berlin BAS: [https://sap-build-hana-cloud.eu10cf.applicationstudio.cloud.sap/index.html](https://sap-build-hana-cloud.eu10cf.applicationstudio.cloud.sap/index.html)
+   - ASUG Tech Connect Louisville BAS: [https://hana-cloud-academy-us10.us10cf.applicationstudio.cloud.sap/index.html](https://hana-cloud-academy-us10.us10cf.applicationstudio.cloud.sap/index.html)
+   - SAP TechEd on Tour Bangalore [DBX-link]
 
 2. Enter the same UserId and password provided by the workshop speaker before and according to your desk-id
      - User ID: \<as provided, example AC######U##\>
@@ -104,17 +106,18 @@ This exercise uses the Jupyter Notebooks extension in SAP Business Application S
 3. In the landing page for BAS, click on Create Dev Space to create a virtual environment in which to start a project.
 
 4. Choose the following for creating your dev space, 
-      - __Dev space name__:  __DA261_AC207556U##__ 
-        [replace ## with index of your assgined user id] 
+      - __Dev space name__ (replace ## with index of your assgined user id):
+        - SAP TechEd Berlin __DA261_AC207556U##__ 
+        - ASUG Tech Connect Louisville __DA261_AC232022U##__
       - select for __application type__ on the left __SAP HANA Native Application__  
       - select from __Additional SAP Extensions__ on the right hand side the __Python Tools__
       - and then select __Create Dev Space__ to start the process. This will create a dedicated development environment with all the tools required to run the Python Jupyter Notebooks.
 <br>![](./images/BAS_create_dev_space.png)
 
-5. It will take a few minutes for the Dev Space to start up. The status can be seen beside the name.
+1. It will take a few minutes for the Dev Space to start up. The status can be seen beside the name.
 <br>![](./images/BAS_devspace_start.png)
 
-6. Once the status changes to __Running__, __click on your dev space name__ (__DA261_AC207556U##__) to open it.
+1. Once the status changes to __Running__, __click on your dev space name__ (__DA261_AC207556U##__) to open it.
 <br>![](./images/BAS_devspace_running_open.png)
 
 <br><br>
@@ -211,7 +214,9 @@ Pursue the following steps
 <br>![](./images/BAS_python_check-connection_userini.png)
 
 You should have successfully connect to the SAP HANA Cloud instance with hostname:  
-   - __13b7c15d-848f-40b5-9259-c9c36ab85f56.hna1.prod-eu10.hanacloud.ondemand.com__
+   - SAP TechEd Berlin __13b7c15d-848f-40b5-9259-c9c36ab85f56.hna1.prod-eu10.hanacloud.ondemand.com__
+   - ASUG Tech Connect Louisville __085fe51f-540c-4b27-8523-3ff931c0674d.hana.prod-us10.hanacloud.ondemand.com__
+   - SAP TechEd on Tour Bangalore 
 
 <br>
 
